@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paramjot Singh</title>
+    <link>https://pchhina.github.io/portfolioSite/</link>
+    <description>Recent content on Paramjot Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Jun 2017 05:20:06 -0500</lastBuildDate>
+    
+	<atom:link href="https://pchhina.github.io/portfolioSite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Applied Statistical Programming </title>
+      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_3/</link>
+      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_3/</guid>
+      <description>Nitro Quick and easy performance analyzer library for Go.
+Overview Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions or different functions.
+Implementing Nitro Using Nitro is simple. First, use go get to install the latest version of the library.
+$ go get github.com/spf13/nitro  Next, include nitro in your application.
+Quick and easy performance analyzer library for Go.</description>
+    </item>
+    
+    <item>
+      <title>Creative Thinking in Data Cleaning</title>
+      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_2/</link>
+      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_2/</guid>
+      <description>Nitro Quick and easy performance analyzer library for Go.
+Overview Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions or different functions.
+Implementing Nitro Using Nitro is simple. First, use go get to install the latest version of the library.
+$ go get github.com/spf13/nitro  Next, include nitro in your application.
+Quick and easy performance analyzer library for Go.</description>
+    </item>
+    
+    <item>
+      <title>The good, the bad, the ugly</title>
+      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_4/</link>
+      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_4/</guid>
+      <description>Nitro Quick and easy performance analyzer library for Go.
+Overview Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions or different functions.
+Implementing Nitro Using Nitro is simple. First, use go get to install the latest version of the library.
+$ go get github.com/spf13/nitro  Next, include nitro in your application.
+Quick and easy performance analyzer library for Go.</description>
+    </item>
+    
+    <item>
+      <title>test_of_post_1</title>
+      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_1/</link>
+      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_1/</guid>
+      <description>Nitro Quick and easy performance analyzer library for Go.
+Overview Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions or different functions.
+Implementing Nitro Using Nitro is simple. First, use go get to install the latest version of the library.
+$ go get github.com/spf13/nitro  Next, include nitro in your application.
+Quick and easy performance analyzer library for Go.</description>
+    </item>
+    
+    <item>
+      <title>The irony of great things</title>
+      <link>https://pchhina.github.io/portfolioSite/post/this_is_new_too/</link>
+      <pubDate>Mon, 19 Jun 2017 04:38:21 -0500</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/this_is_new_too/</guid>
+      <description>This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I’ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won’t cover using CSS to style your theme.
+We’ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Welcome to the blog!</title>
+      <link>https://pchhina.github.io/portfolioSite/post/first/</link>
+      <pubDate>Sun, 18 Jun 2017 05:38:19 -0500</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/first/</guid>
+      <description>This is the test blog to see where it appears! Skins are the files responsible for the look and feel of your site. It’s the CSS that controls colors and fonts, it’s the Javascript that determines actions and reactions. It’s also the rules that Hugo uses to transform your content into the HTML that the site will serve to visitors.
+You have two ways to create a skin. The simplest way is to create it in the layouts/ directory.</description>
+    </item>
+    
+  </channel>
+</rss>
