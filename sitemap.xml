@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://pchhina.github.io/portfolioSite/</loc>
+    <lastmod>2017-06-20T05:20:06-05:00</lastmod>
+    <priority>0</priority>
+  </url>
   
   <url>
     <loc>https://pchhina.github.io/portfolioSite/post/test_of_post_3/</loc>
@@ -30,28 +35,6 @@
   <url>
     <loc>https://pchhina.github.io/portfolioSite/post/first/</loc>
     <lastmod>2017-06-18T05:38:19-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pchhina.github.io/portfolioSite/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pchhina.github.io/portfolioSite/</loc>
-    <lastmod>2017-06-20T05:20:06-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pchhina.github.io/portfolioSite/post/</loc>
-    <lastmod>2017-06-20T05:20:06-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pchhina.github.io/portfolioSite/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
