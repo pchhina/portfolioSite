@@ -6,245 +6,63 @@
     <description>Recent content in Posts on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Jun 2017 05:20:06 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 26 Dec 2017 21:40:42 -0600</lastBuildDate>
     <atom:link href="https://pchhina.github.io/portfolioSite/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Applied Statistical Programming </title>
-      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_3/</link>
-      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
+      <title>git commands</title>
+      <link>https://pchhina.github.io/portfolioSite/post/git-commands/</link>
+      <pubDate>Tue, 26 Dec 2017 21:40:42 -0600</pubDate>
       
-      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_3/</guid>
+      <guid>https://pchhina.github.io/portfolioSite/post/git-commands/</guid>
       <description>
 
-&lt;h2 id=&#34;nitro:8722cd81429ee41db710c197be96da34&#34;&gt;Nitro&lt;/h2&gt;
+&lt;p&gt;This is just a list of git commands I am currently using. I will keep on adding stuff to it as I use more/different commands. There are tons of tutorials out there as well as quite a few cheat sheets. While those are mostly comprehensive resources, I tend to get distracted and try to learn all commands at once without using them in real projects. That doesn&amp;rsquo;t help much.&lt;/p&gt;
 
-&lt;p&gt;Quick and easy performance analyzer library for &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;initialize-a-local-git-repository:426366135f9b7036b5475695fbc6d142&#34;&gt;Initialize a local git repository&lt;/h3&gt;
 
-&lt;h2 id=&#34;overview:8722cd81429ee41db710c197be96da34&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Nitro is a quick and easy performance analyzer library for Go.
-It is useful for comparing A/B against different drafts of functions
-or different functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro:8722cd81429ee41db710c197be96da34&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git init
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
+&lt;h3 id=&#34;cloning-an-existing-project-from-github:426366135f9b7036b5475695fbc6d142&#34;&gt;Cloning an existing project from github&lt;/h3&gt;
 
-&lt;p&gt;Quick and easy performance analyzer library for &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;overview-1:8722cd81429ee41db710c197be96da34&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;This is an overview.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro-1:8722cd81429ee41db710c197be96da34&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git clone &amp;lt;project url here&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Creative Thinking in Data Cleaning</title>
-      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_2/</link>
-      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
-      
-      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_2/</guid>
-      <description>
+&lt;h3 id=&#34;status-check:426366135f9b7036b5475695fbc6d142&#34;&gt;Status Check&lt;/h3&gt;
 
-&lt;h1 id=&#34;nitro:3fc5aa3ac654f5d5de6ee558ea0cf916&#34;&gt;Nitro&lt;/h1&gt;
-
-&lt;p&gt;Quick and easy performance analyzer library for &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;overview:3fc5aa3ac654f5d5de6ee558ea0cf916&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Nitro is a quick and easy performance analyzer library for Go.
-It is useful for comparing A/B against different drafts of functions
-or different functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro:3fc5aa3ac654f5d5de6ee558ea0cf916&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git status
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
+&lt;h3 id=&#34;add-files:426366135f9b7036b5475695fbc6d142&#34;&gt;Add files&lt;/h3&gt;
 
-&lt;p&gt;Quick and easy performance analyzer library for &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;overview-1:3fc5aa3ac654f5d5de6ee558ea0cf916&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Nitro is a quick and easy performance analyzer library for Go.
-It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro-1:3fc5aa3ac654f5d5de6ee558ea0cf916&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git add &amp;lt;files&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The good, the bad, the ugly</title>
-      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_4/</link>
-      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
-      
-      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_4/</guid>
-      <description>
+&lt;h3 id=&#34;commit-changes:426366135f9b7036b5475695fbc6d142&#34;&gt;Commit changes&lt;/h3&gt;
 
-&lt;h1 id=&#34;nitro:c7583501e0cd48986a93cb5d4f97ecde&#34;&gt;Nitro&lt;/h1&gt;
-
-&lt;p&gt;Quick and easy performance analyzer library for &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;overview:c7583501e0cd48986a93cb5d4f97ecde&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Nitro is a quick and easy performance analyzer library for Go.
-It is useful for comparing A/B against different drafts of functions
-or different functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro:c7583501e0cd48986a93cb5d4f97ecde&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;commit message&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
+&lt;h3 id=&#34;check-log:426366135f9b7036b5475695fbc6d142&#34;&gt;Check log&lt;/h3&gt;
 
-&lt;p&gt;Quick and easy performance analyzer library for &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;overview-1:c7583501e0cd48986a93cb5d4f97ecde&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Nitro is a quick and easy performance analyzer library for Go.
-It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro-1:c7583501e0cd48986a93cb5d4f97ecde&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git log
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>test_of_post_1</title>
-      <link>https://pchhina.github.io/portfolioSite/post/test_of_post_1/</link>
-      <pubDate>Tue, 20 Jun 2017 05:20:06 -0500</pubDate>
-      
-      <guid>https://pchhina.github.io/portfolioSite/post/test_of_post_1/</guid>
-      <description>
+&lt;h3 id=&#34;create-a-branch-and-check-it-out:426366135f9b7036b5475695fbc6d142&#34;&gt;Create a branch and check it out&lt;/h3&gt;
 
-&lt;h1 id=&#34;nitro:f062a3c14f7feee41b614d407ef37877&#34;&gt;Nitro&lt;/h1&gt;
-
-&lt;p&gt;This is the intro to Nitro&lt;/p&gt;
-
-&lt;h2 id=&#34;overview:f062a3c14f7feee41b614d407ef37877&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Nitro is a quick and easy performance analyzer library for Go.
-It is useful for comparing A/B against different drafts of functions
-or different functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro:f062a3c14f7feee41b614d407ef37877&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git checkout -b &amp;lt;branch&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
+&lt;h3 id=&#34;merge-branch-into-master:426366135f9b7036b5475695fbc6d142&#34;&gt;Merge branch into master&lt;/h3&gt;
 
-&lt;p&gt;Quick and easy performance analyzer library for &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;overview-1:f062a3c14f7feee41b614d407ef37877&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Nitro is a quick and easy performance analyzer library for Go.
-It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions. Nitro is a quick and easy performance analyzer library for Go. It is useful for comparing A/B against different drafts of functions
-or different functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementing-nitro-1:f062a3c14f7feee41b614d407ef37877&#34;&gt;Implementing Nitro&lt;/h2&gt;
-
-&lt;p&gt;Using Nitro is simple. First, use &lt;code&gt;go get&lt;/code&gt; to install the latest version
-of the library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github.com/spf13/nitro
+&lt;pre&gt;&lt;code&gt;git merge &amp;lt;branch&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Next, include nitro in your application.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The irony of great things</title>
-      <link>https://pchhina.github.io/portfolioSite/post/this_is_new_too/</link>
-      <pubDate>Mon, 19 Jun 2017 04:38:21 -0500</pubDate>
-      
-      <guid>https://pchhina.github.io/portfolioSite/post/this_is_new_too/</guid>
-      <description>&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I’ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won’t cover using CSS to style your theme.&lt;/p&gt;
+&lt;h3 id=&#34;stage-all-modified-files:426366135f9b7036b5475695fbc6d142&#34;&gt;Stage all modified files&lt;/h3&gt;
 
-&lt;p&gt;We’ll start with creating a new site with a very basic template. Then we’ll add in a few pages and posts. With small variations on that, you will be able to create many different types of web sites.&lt;/p&gt;
-
-&lt;p&gt;In this tutorial, commands that you enter will start with the “$” prompt. The output will follow. Lines that start with “#” are comments that I’ve added to explain a point. When I show updates to a file, the “:wq” on the last line means to save the file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get github
-a &amp;lt;- b + c;
+&lt;pre&gt;&lt;code&gt;git add -u
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Welcome to the blog!</title>
-      <link>https://pchhina.github.io/portfolioSite/post/first/</link>
-      <pubDate>Sun, 18 Jun 2017 05:38:19 -0500</pubDate>
-      
-      <guid>https://pchhina.github.io/portfolioSite/post/first/</guid>
-      <description>&lt;p&gt;Welcome to the fresh site for 2018!&lt;/p&gt;
 </description>
     </item>
     
