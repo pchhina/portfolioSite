@@ -19,47 +19,47 @@
 
 &lt;p&gt;This is just a list of git commands I am currently using. I will keep on adding stuff to it as I use more/different commands. There are tons of tutorials out there as well as quite a few cheat sheets. While those are mostly comprehensive resources, I tend to get distracted and try to learn all commands at once without using them in real projects. That doesn&amp;rsquo;t help much.&lt;/p&gt;
 
-&lt;h3 id=&#34;initialize-a-local-git-repository:426366135f9b7036b5475695fbc6d142&#34;&gt;Initialize a local git repository&lt;/h3&gt;
+&lt;h4 id=&#34;initialize-a-local-git-repository:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Initialize a local git repository&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;cloning-an-existing-project-from-github:426366135f9b7036b5475695fbc6d142&#34;&gt;Cloning an existing project from github&lt;/h3&gt;
+&lt;h4 id=&#34;cloning-an-existing-project-from-github:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Cloning an existing project from github&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git clone &amp;lt;project url here&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;status-check:426366135f9b7036b5475695fbc6d142&#34;&gt;Status Check&lt;/h3&gt;
+&lt;h4 id=&#34;status-check:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Status Check&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git status
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;add-files:426366135f9b7036b5475695fbc6d142&#34;&gt;Add files&lt;/h3&gt;
+&lt;h4 id=&#34;add-files:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Add files&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git add &amp;lt;files&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;commit-changes:426366135f9b7036b5475695fbc6d142&#34;&gt;Commit changes&lt;/h3&gt;
+&lt;h4 id=&#34;commit-changes:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Commit changes&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;commit message&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;check-log:426366135f9b7036b5475695fbc6d142&#34;&gt;Check log&lt;/h3&gt;
+&lt;h4 id=&#34;check-log:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Check log&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git log
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;create-a-branch-and-check-it-out:426366135f9b7036b5475695fbc6d142&#34;&gt;Create a branch and check it out&lt;/h3&gt;
+&lt;h4 id=&#34;create-a-branch-and-check-it-out:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Create a branch and check it out&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git checkout -b &amp;lt;branch&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;merge-branch-into-master:426366135f9b7036b5475695fbc6d142&#34;&gt;Merge branch into master&lt;/h3&gt;
+&lt;h4 id=&#34;merge-branch-into-master:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Merge branch into master&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git merge &amp;lt;branch&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;stage-all-modified-files:426366135f9b7036b5475695fbc6d142&#34;&gt;Stage all modified files&lt;/h3&gt;
+&lt;h4 id=&#34;stage-all-modified-files:426366135f9b7036b5475695fbc6d142&#34;&gt;&lt;strong&gt;Stage all modified files&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git add -u
 &lt;/code&gt;&lt;/pre&gt;
