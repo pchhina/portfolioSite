@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Economic and Health Impact of Severe Weather Events &middot;  Paramjot Singh" />
+  
+  <meta property="og:site_name" content="Paramjot Singh" />
+  <meta property="og:url" content="https://pchhina.github.io/portfolioSite/post/stormdata/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:published_time" content="2017-12-28T19:32:52-06:00" />
+  
+  
+
+  <title>
+     Economic and Health Impact of Severe Weather Events &middot;  Paramjot Singh
+  </title>
+
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/blog.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="https://pchhina.github.io/portfolioSite/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://pchhina.github.io/portfolioSite/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h2> 
+      <div class="sns-links hidden-print">
+  
+  <a href="#ZgotmplZ">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+      
+
+      <ul class="pager">
+      <li class="">
+      <a href="https://pchhina.github.io/portfolioSite/" class="btn btn-lg">
+        <span aria-hidden="true">&laquo;</span>
+        &nbsp; Home &nbsp;
+
+      </a>
+      </li>
+      </ul>
+      
+      
+
+    </section>
+  </header>
+  <main class="container">
+
+
+
+<article class="single-title">
+<div class="row">
+   <div class="col-lg-10 col-lg-offset-1" class="center-block">
+  <header>
+
+    <h1 class="text-primary">Economic and Health Impact of Severe Weather Events</h1>
+
+    <div class="post-meta clearfix">
+      <div class="post-date">
+        Posted on
+        <time datetime="2017-12-28T19:32:52-06:00">
+          Dec 28, 2017
+        </time>
+      </div>
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+ 
+  <section class="single" style="color:#2c3e50;">
+    
+
+<h2 id="synopsis">Synopsis</h2>
+
+<p>This post aims to explore the NOAA Storm Database and answer some basic questions about severe weather events focusing on their economic and health impact. The U.S. National Oceanic and Atmospheric Administration&rsquo;s (NOAA) storm database tracks characteristics of major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage. The events in the database start in the year 1950 and end in November 2011. This report concludes the following:</p>
+
+<ul>
+<li>Tornadoes, excessive heat and flash floods are primary causes of fatalities.</li>
+<li>Injuries are mostly caused by tornadoes. The data shows that tornadoes alone resulted in more than 90,000 injuries while all other events caused less than 10,000 injuries.</li>
+<li>In addition, floods cause most economic damage, followed by hurricanes, tornadoes and storms. These four events alone caused damages in excess of 300 Billion US Dollars.</li>
+</ul>
+
+<h2 id="data-processing">Data Processing</h2>
+
+<h3 id="loading-libraries">Loading Libraries</h3>
+
+<pre><code class="language-r">rm(list = ls())
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+</code></pre>
+
+<p>Now we are going to import data using <code>download.file</code> command and then this data is read into data frame using <code>read.csv</code> command. After reading the data, date variable (BGN_DATE) is transformed into &lsquo;date&rsquo; class while event type (EVTYPE) is transformed into factor. The data is finally stored as tibble in <code>data1</code>.</p>
+
+<pre><code class="language-r">url &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2&quot;
+download.file(url,&quot;./datadown.csv.bz2&quot;)
+data &lt;- read.csv(&quot;datadown.csv.bz2&quot;,stringsAsFactors = FALSE)
+
+data$BGN_DATE &lt;- mdy_hms(data$BGN_DATE)
+data$EVTYPE &lt;- as.factor(data$EVTYPE)
+
+data1 &lt;- tbl_df(data)
+</code></pre>
+
+<h2 id="results">Results</h2>
+
+<h3 id="data-analysis-to-find-events-causing-most-fatalities">Data analysis to find events causing most fatalities</h3>
+
+<p>We will first process the data to find events that caused most fatalities. We use <code>dplyr</code> package functions for this to first group the data by event type followed by adding fatalities and finally filtering events that caused 90% of the total fatalities.</p>
+
+<pre><code class="language-r">fatal &lt;- data1  %&gt;% 
+        group_by(EVTYPE) %&gt;% 
+        summarize(FATALITIES=sum(FATALITIES)) %&gt;% 
+        arrange(desc(FATALITIES)) %&gt;% 
+        select(EVTYPE,FATALITIES) %&gt;% 
+        mutate(FATALITIES_CUM = cumsum(FATALITIES)) %&gt;%
+        filter(FATALITIES_CUM &lt; 0.9*sum(FATALITIES))
+
+ggplot(data=fatal,aes(x=reorder(EVTYPE,FATALITIES),y=FATALITIES)) + 
+        geom_bar(stat = &quot;identity&quot;,fill=&quot;steelblue4&quot;) + 
+        coord_flip() + 
+        labs(title=&quot;Events Causing 90% of Fatalities&quot;,
+             y = &quot;Number of Fatalities&quot;,
+             x = &quot;Type of Events&quot;)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/fatalities-1.png" width="900px" />
+    
+    
+</figure>
+
+
+<p>The plot shows that tornadoes are the largest cause of fatalities resulting in more than 5500 deaths. These are followed by excessive heat causing close to 2000 deaths. Other events causing large fatalities include flash floods, lightning and thunderstorm winds.</p>
+
+<h3 id="data-analysis-to-find-events-causing-most-injuries">Data analysis to find events causing most injuries</h3>
+
+<p>Processing data from injuries follows the same method described earlier to process fatalities data.</p>
+
+<pre><code class="language-r">injury &lt;- data1  %&gt;% 
+        group_by(EVTYPE) %&gt;% 
+        summarize(INJURIES=sum(INJURIES)) %&gt;% 
+        arrange(desc(INJURIES)) %&gt;% 
+        select(EVTYPE,INJURIES) %&gt;% 
+        mutate(INJURIES_CUM = cumsum(INJURIES)) %&gt;%
+        filter(INJURIES_CUM &lt; 0.9*sum(INJURIES))
+
+ggplot(data=injury,aes(x=reorder(EVTYPE,INJURIES),y=INJURIES)) + 
+        geom_bar(stat = &quot;identity&quot;,fill=&quot;palegreen4&quot;) + 
+        coord_flip() +
+        labs(title=&quot;Events Causing 90% of Injuries&quot;,
+                y = &quot;Number of Injuries&quot;,
+                x = &quot;Type of Events&quot;)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/injuries-1.png" width="900px" />
+    
+    
+</figure>
+
+
+<p>It is clear from the above plot that tornadoes are leading causes of injuries. These are followed by thunderstorm winds, floods, excessive heat and lightning as other major events causing injuries.</p>
+
+<h3 id="data-analysis-to-find-events-causing-most-economic-damage">Data analysis to find events causing most economic damage</h3>
+
+<p>Economic damage has variety of units that we need to consolidate first. For this we want to work with only economic variables so we select appropriate columns. We then create a table (using <code>data.frame</code>) for key-value pairs of <code>PROPDMGEXP</code> and their values. Similar method is applied for <code>CROPDMGEXP</code>.</p>
+
+<pre><code class="language-r">data1e &lt;- data1 %&gt;% select(EVTYPE,PROPDMG:CROPDMGEXP)
+
+dmgindx &lt;- unique(c(unique(data1e$PROPDMGEXP),unique(data1e$CROPDMGEXP)))
+dmgindx.val &lt;- c(1e3,1e6,0,1e9,1e6,1,10,10,10,0,10,10,10,100,10,100,0,10,10,1e3)
+KeyValue &lt;- data.frame(dmgindx,dmgindx.val)
+KeyValue$dmgindx &lt;- as.character(KeyValue$dmgindx)
+</code></pre>
+
+<p>This table is added to the main data using <code>merge</code> command.</p>
+
+<pre><code class="language-r">data1e &lt;- merge(data1e,KeyValue,by.x = &quot;PROPDMGEXP&quot;,by.y = &quot;dmgindx&quot;)
+data1e &lt;- data1e %&gt;% rename(PropDmgExpVal=dmgindx.val)
+data1e &lt;- merge(data1e,KeyValue,by.x = &quot;CROPDMGEXP&quot;,by.y = &quot;dmgindx&quot;)
+</code></pre>
+
+<p>Using the unit conversion data calculated earlier, property damage and crop damage data is computed and then added together to find total economic damage.</p>
+
+<pre><code class="language-r">data.econ &lt;- data1e %&gt;% 
+        rename(CropDmgExpVal=dmgindx.val) %&gt;% 
+        mutate(PropDmgDollars=PROPDMG*PropDmgExpVal) %&gt;% 
+        mutate(CropDmgDollars=CROPDMG*CropDmgExpVal) %&gt;% 
+        mutate(EconDmg.Billions=(PropDmgDollars+CropDmgDollars)/1e9) %&gt;%
+        select(EVTYPE,PROPDMG,PROPDMGEXP,PropDmgExpVal,PropDmgDollars,
+               CROPDMG,CROPDMGEXP,CropDmgExpVal,CropDmgDollars,EconDmg.Billions)
+</code></pre>
+
+<p>Then cumulative damage is computed after grouping the data  by event type and filtering data that constitutes 90% of the damage.</p>
+
+<pre><code class="language-r">econ &lt;- data.econ  %&gt;% 
+        group_by(EVTYPE) %&gt;% 
+        summarize(DMG=sum(EconDmg.Billions)) %&gt;% 
+        arrange(desc(DMG)) %&gt;% 
+        select(EVTYPE,DMG) %&gt;% 
+        mutate(DMG_CUM = cumsum(DMG)) %&gt;%
+        filter(DMG_CUM &lt; 0.9*sum(DMG))
+
+ggplot(data=econ,aes(x=reorder(EVTYPE,DMG),y=DMG)) + 
+        geom_bar(stat = &quot;identity&quot;,fill=&quot;tomato4&quot;) + 
+        coord_flip() + 
+        labs(title=&quot;Events Causing 90% of Economic Damage&quot;,
+                y = &quot;Economic Damage (Billions of US Dollars)&quot;,
+                x = &quot;Type of Events&quot;)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/econ-1.png" width="900px" />
+    
+    
+</figure>
+
+
+<p>The plot above shows that floods are most severe events as far as economic damage is concerned. Other events that resulted in large economic damage include hurricanes, tornadoes and storm surges.</p>
+
+  </section>
+  
+  <footer>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        
+      </div>
+     
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="https://pchhina.github.io/portfolioSite/post/git-commands/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+
+      <li>
+      <a href="https://pchhina.github.io/portfolioSite//post">&uarr; All Posts</a>
+      </li>
+
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+  </div>
+  </div>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="#ZgotmplZ">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <script src="https://pchhina.github.io/portfolioSite/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  
+</body>
+</html>
+
