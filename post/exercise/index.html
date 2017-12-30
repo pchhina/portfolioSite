@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Exercise Quality Prediction using Machine Learning &middot;  Paramjot Singh" />
+  
+  <meta property="og:site_name" content="Paramjot Singh" />
+  <meta property="og:url" content="https://pchhina.github.io/portfolioSite/post/exercise/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:published_time" content="2017-12-30T05:04:40-06:00" />
+  
+  
+
+  <title>
+     Exercise Quality Prediction using Machine Learning &middot;  Paramjot Singh
+  </title>
+
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/blog.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="https://pchhina.github.io/portfolioSite/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://pchhina.github.io/portfolioSite/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h2> 
+      <div class="sns-links hidden-print">
+  
+  <a href="#ZgotmplZ">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+      
+
+      <ul class="pager">
+      <li class="">
+      <a href="https://pchhina.github.io/portfolioSite/" class="btn btn-lg">
+        <span aria-hidden="true">&laquo;</span>
+        &nbsp; Home &nbsp;
+
+      </a>
+      </li>
+      </ul>
+      
+      
+
+    </section>
+  </header>
+  <main class="container">
+
+
+
+<article class="single-title">
+<div class="row">
+   <div class="col-lg-10 col-lg-offset-1" class="center-block">
+  <header>
+
+    <h1 class="text-primary">Exercise Quality Prediction using Machine Learning</h1>
+
+    <div class="post-meta clearfix">
+      <div class="post-date">
+        Posted on
+        <time datetime="2017-12-30T05:04:40-06:00">
+          Dec 30, 2017
+        </time>
+      </div>
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+ 
+  <section class="single" style="color:#2c3e50;">
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Many devices exists today in the market (such as Jawbone Up, Nike FuelBand, and Fitbit) inexpensively record, track and analyze data on personal physical activity. Although by using these deviices, quantiy of the physical activity is often monitored, quality is rarely quantified. In this project, our goal is be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants in an attempt to predict whether the activity is performed correcly or not. To generate the data, subjects were asked to perform barbell lifts correctly and incorrectly in 5 different ways. More information is available from the website here: <a href="http://groupware.les.inf.puc-rio.br/har">http://groupware.les.inf.puc-rio.br/har</a> (see the section on the Weight Lifting Exercise Dataset).</p>
+
+<h3 id="loading-packages-and-downloading-data">Loading Packages and Downloading Data</h3>
+
+<p>We start by downloading the data from the source and reading it into <code>R</code>. Feature vectors from training data are stored separately from outcome. Testing data is stored in a separate object and is used only in the final stage for predictions.</p>
+
+<pre><code class="language-r"># Load Packages
+library(caret)
+library(dplyr)
+library(ggplot2)
+library(corrplot)
+rm(list = ls())
+# Download Data
+src.trn &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;
+if (!file.exists(&quot;pml-training.csv&quot;)) {
+    download.file(url = src.trn, destfile = &quot;pml-training.csv&quot;)
+}
+src.test &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;
+if (!file.exists(&quot;pml-testing.csv&quot;)) {
+    download.file(url = src.test, destfile = &quot;pml-testing.csv&quot;)
+}
+training &lt;- read.csv(&quot;pml-training.csv&quot;)
+training_X &lt;- training[, -160]
+training_Y &lt;- training[, 160]
+testing &lt;- read.csv(&quot;pml-testing.csv&quot;)
+testing_X &lt;- testing[, -160]
+</code></pre>
+
+<h3 id="exploratory-data-analysis-and-feature-selection">Exploratory Data Analysis and Feature Selection</h3>
+
+<p>Before we apply machine learning techniques to the training data, it is important to carry out some exploratory analysis in an effort to address any problems with the data (for example, missing values).</p>
+
+<h4 id="na-values"><em>NA</em> Values</h4>
+
+<p>Since most machine learning algorithms generally have difficulty when some values for features have <em>NA</em> values, it is important to identify those values in the data set. Specific strategy (remove or impute) to handle these values  would depend on how many <em>NAs</em> are there and their distribution.</p>
+
+<p>We will first identify number of NAs in each column.</p>
+
+<pre><code class="language-r"># count number os NAs in each variable
+table(sapply(training_X, function(x) sum(is.na(x))))
+</code></pre>
+
+<p><table style="width:50%; border:1px solid grey;">
+  <tr>
+    <th>0</th>
+    <th>19216</th>
+  </tr>
+  <tr>
+    <td>92</td>
+    <td>67</td>
+  </tr>
+</table></p>
+
+<p>The table above shows that 92 variables have no NAs while there are 67 variables with 98% missing values. With so many NA values for these variables, it is probably good to remove those variables.</p>
+
+<pre><code class="language-r">training.na &lt;- sapply(training_X, function(x) ((sum(is.na(x)))/dim(training_X)[1]) &gt; 
+    0.95)
+training.small &lt;- training_X[, !training.na]
+testing.small &lt;- testing_X[, !training.na]
+</code></pre>
+
+<h4 id="near-zero-variance-features">Near Zero Variance Features</h4>
+
+<p>Now we will identify and remove near zero variance features. The cutoff used for the ratio of the most common value to the second most common value is 2. The cutoff for the percentage of distinct values out of the number of total samples used is 20. In addition, some redundant variables (timestamps, names etc.) are also removed.</p>
+
+<pre><code class="language-r"># Remove near zero variance columns
+remove_cols &lt;- nearZeroVar(training.small, names = TRUE, freqCut = 2, uniqueCut = 20)
+allCols &lt;- names(training.small)
+training.smaller &lt;- training.small[, setdiff(allCols, remove_cols)]
+testing.smaller &lt;- testing.small[, setdiff(allCols, remove_cols)]
+
+# Remove redundant variables
+rm.var &lt;- names(training.smaller) %in% c(&quot;X&quot;, &quot;user_name&quot;, &quot;raw_timestamp_part_1&quot;, 
+    &quot;raw_timestamp_part_2&quot;, &quot;cvtd_timestamp&quot;)
+training.X &lt;- training.smaller[!rm.var]
+testing.X &lt;- testing.smaller[!rm.var]
+</code></pre>
+
+<h4 id="correlated-features">Correlated Features</h4>
+
+<p>Finally, we identify the features that are highly correlated and remove pairwise features with absolute correlation of 0.8 or greater. The two plots below show the correlation matrix of all features before and after removing the correlated variables.</p>
+
+<pre><code class="language-r"># Remove highly correlated variables
+corr.mat &lt;- cor(training.X)
+
+corr.high &lt;- findCorrelation(corr.mat, cutoff = 0.8)
+names(training.X)[corr.high]
+training.X.uncorr &lt;- training.X[, -corr.high]
+testing.X.uncorr &lt;- testing.X[, -corr.high]
+par(mfrow = c(1, 2))
+corrplot(corr.mat, order = &quot;hclust&quot;, tl.pos = &quot;n&quot;)
+corrplot(cor(training.X.uncorr), order = &quot;hclust&quot;, tl.pos = &quot;n&quot;)
+mtext(&quot;Correlation Plot: Before and after highly correlated variables removed&quot;, 
+    side = 3, outer = TRUE, line = -3)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/corrplot.png" width="90%" />
+    
+    
+</figure>
+
+
+<h3 id="model-building">Model Building</h3>
+
+<p>In this section, we are going to build different models. This is a classification problem, so we will try classification tree (<code>rpart</code>). Since recursive binary partitioning approach used in classification tree may lead to overfitting, a better alternative may be to use random forest (<code>ranger</code>). In addition, we will explore k-nearest neighbor (<code>knn</code>) approach for its simplicity. Finally, we will also use <code>glmnet</code>, which is a form of generalized linear model but penalizes for large number of predictors. All the models are build using <code>caret</code> package.</p>
+
+<h4 id="cross-validation">Cross-Validation</h4>
+
+<p>To build the four models described above, a 5-fold cross validation is used to get a reasonable estimate of out-of-sample error. For the models to be comparable, a single <code>trainingControl</code> object is created and used for all four models.</p>
+
+<h4 id="model-results">Model Results</h4>
+
+<pre><code class="language-r">plot(modelknn)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/knn.png" width="90%" />
+    
+    
+</figure>
+
+
+<pre><code class="language-r">plot(modelrpart)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/rpart.png" width="90%" />
+    
+    
+</figure>
+
+
+<pre><code class="language-r">plot(modelrf)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/rf.png" width="90%" />
+    
+    
+</figure>
+
+
+<pre><code class="language-r">plot(modelglm)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/glm.png" width="90%" />
+    
+    
+</figure>
+
+
+<p>From the accuracy plots above, we note that <em>k nearest neighbors</em> have accuracy ranging from 74% to 78% with best accuracy achieved with 5 neighbors. <em>Classification tree</em> is only 33%-53% accurate with best accuracy for 0.02 complexity parameter. <em>glmnet</em> achieved best accuracy of 54%. Finally, <em>random forest</em> has accuracy ranging from 97% to 98% with best accuracy achieved with 18 randomly selected predictors.</p>
+
+<h3 id="model-selection">Model Selection</h3>
+
+<p>For model selection we will compare accuracy of all four models and pick the one with largest accuracy. Since we have used 5-fold cross validation in our model building in previous section, we will get confidence intervals from those accuracy estimates so we can make an informed selection decision.</p>
+
+<pre><code class="language-r"># Model Selection
+mdl.list &lt;- list(glmnet = modelglm, rf = modelrf, knn = modelknn, rpart = modelrpart)
+resamps &lt;- resamples(mdl.list)
+summary(resamps)
+dotplot(resamps)
+</code></pre>
+
+
+<figure >
+    
+        <img src="../images/resamps.png" width="90%" />
+    
+    
+</figure>
+
+
+<p>It is evident that random forest model gives the best accuracy among the choices explored. We will select this as our final model for evaluating the test data in the next section.</p>
+
+<h3 id="model-testing">Model Testing</h3>
+
+<p>Finally we are going to test the model using 20 data points provided in the test set.</p>
+
+<pre><code class="language-r">testPred &lt;- predict(mdl.list, newdata = testing.X.uncorr)
+testPred$rf
+</code></pre>
+
+<h3 id="acknowledgements">Acknowledgements</h3>
+
+<p>The author sincerely wants to thank Professor Hugo and his team (from the Departamento de Informática at the Pontifical Catholic University of Rio de Janeiro) for making this data publicly available. More information on this data set can be accessed from their project at <a href="http://groupware.les.inf.puc-rio.br/har">http://groupware.les.inf.puc-rio.br/har</a>.</p>
+
+  </section>
+  
+  <footer>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        
+      </div>
+     
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="https://pchhina.github.io/portfolioSite/post/stormdata/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+
+      <li>
+      <a href="https://pchhina.github.io/portfolioSite//post">&uarr; All Posts</a>
+      </li>
+
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+  </div>
+  </div>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="#ZgotmplZ">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <script src="https://pchhina.github.io/portfolioSite/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  
+</body>
+</html>
+

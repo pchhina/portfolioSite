@@ -6,10 +6,19 @@
     <description>Recent content on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Dec 2017 19:32:52 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2017 05:04:40 -0600</lastBuildDate>
     
 	<atom:link href="https://pchhina.github.io/portfolioSite/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exercise Quality Prediction using Machine Learning</title>
+      <link>https://pchhina.github.io/portfolioSite/post/exercise/</link>
+      <pubDate>Sat, 30 Dec 2017 05:04:40 -0600</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/exercise/</guid>
+      <description>Introduction Many devices exists today in the market (such as Jawbone Up, Nike FuelBand, and Fitbit) inexpensively record, track and analyze data on personal physical activity. Although by using these deviices, quantiy of the physical activity is often monitored, quality is rarely quantified. In this project, our goal is be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants in an attempt to predict whether the activity is performed correcly or not.</description>
+    </item>
     
     <item>
       <title>Economic and Health Impact of Severe Weather Events</title>
