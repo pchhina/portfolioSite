@@ -38,5 +38,14 @@
       <description>This is just a list of git commands I am currently using. I will keep on adding stuff to it as I use more/different commands. There are tons of tutorials out there as well as quite a few cheat sheets. While those are mostly comprehensive resources, I tend to get distracted and try to learn all commands at once without using them in real projects. That doesn&amp;rsquo;t help much.</description>
     </item>
     
+    <item>
+      <title>US Wind Energy Production (2016)</title>
+      <link>https://pchhina.github.io/portfolioSite/post/wind/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/wind/</guid>
+      <description>Last week I learned while listening to NPR that Texas is at the top when it comes to wind power production among all US states. While it is a suprising fact given that Texas is a conservative state and the article is an interesting read in itself, this led me to pull some data from US Department of Energy and create the map I have presented here.</description>
+    </item>
+    
   </channel>
 </rss>
