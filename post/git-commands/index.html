@@ -3,7 +3,7 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content=" git commands &middot;  Paramjot Singh" />
+  <meta property="og:title" content=" Just Enough... Git &middot;  Paramjot Singh" />
   
   <meta property="og:site_name" content="Paramjot Singh" />
   <meta property="og:url" content="https://pchhina.github.io/portfolioSite/post/git-commands/" />
@@ -16,7 +16,7 @@
   
 
   <title>
-     git commands &middot;  Paramjot Singh
+     Just Enough... Git &middot;  Paramjot Singh
   </title>
 
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/bootstrap.min.css" />
@@ -73,7 +73,7 @@
    <div class="col-lg-10 col-lg-offset-1" class="center-block">
   <header>
 
-    <h1 class="text-primary">git commands</h1>
+    <h1 class="text-primary">Just Enough... Git</h1>
 
     <div class="post-meta clearfix">
       <div class="post-date">
@@ -89,54 +89,50 @@
   </header>
  
   <section class="single" style="color:#2c3e50; font-size:18px;">
-    
+    <p>This is just a list of git commands I am currently using. I will keep on adding stuff to it as I use more/different commands. There are tons of tutorials out there as well as quite a few cheat sheets. While those are mostly comprehensive resources, I tend to get distracted and try to learn all commands at once without using them in real projects. That doesn&rsquo;t help much.</p>
 
-<p>This is just a list of git commands I am currently using. I will keep on adding stuff to it as I use more/different commands. There are tons of tutorials out there as well as quite a few cheat sheets. While those are mostly comprehensive resources, I tend to get distracted and try to learn all commands at once without using them in real projects. That doesn&rsquo;t help much.</p>
+<p><strong>Initialize a local git repository</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git init</code></pre></div></p>
 
-<h4 id="initialize-a-local-git-repository"><strong>Initialize a local git repository</strong></h4>
+<p><strong>Cloning an existing project from github</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git clone &lt;project url here&gt;</code></pre></div></p>
 
-<pre><code>git init
-</code></pre>
+<p><strong>Status Check</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git status</code></pre></div></p>
 
-<h4 id="cloning-an-existing-project-from-github"><strong>Cloning an existing project from github</strong></h4>
+<p><strong>Create a branch and check it out</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git checkout -b &lt;branch&gt;</code></pre></div></p>
 
-<pre><code>git clone &lt;project url here&gt;
-</code></pre>
+<p><strong>List all branches and active branch</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git branch</code></pre></div></p>
 
-<h4 id="status-check"><strong>Status Check</strong></h4>
+<p><strong>Stage specific files, all files, all modified files</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git add &lt;files&gt;
+git add --all
+git add -u</code></pre></div></p>
 
-<pre><code>git status
-</code></pre>
+<p><strong>Unstage a file</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git reset HEAD &lt;file-name&gt;</code></pre></div></p>
 
-<h4 id="add-files"><strong>Add files</strong></h4>
+<p><strong>Commit changes</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git commit -m &#34;commit message&#34;</code></pre></div></p>
 
-<pre><code>git add &lt;files&gt;
-</code></pre>
+<p><strong>Check log</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git log</code></pre></div></p>
 
-<h4 id="commit-changes"><strong>Commit changes</strong></h4>
+<p><strong>Merge branch into master</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git merge &lt;branch&gt;</code></pre></div></p>
 
-<pre><code>git commit -m &quot;commit message&quot;
-</code></pre>
+<p><strong>Delete a branch</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git branch -d &lt;branch&gt;</code></pre></div></p>
 
-<h4 id="check-log"><strong>Check log</strong></h4>
+<p><strong>Push changes to remote(master)</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git push origin master</code></pre></div></p>
 
-<pre><code>git log
-</code></pre>
-
-<h4 id="create-a-branch-and-check-it-out"><strong>Create a branch and check it out</strong></h4>
-
-<pre><code>git checkout -b &lt;branch&gt;
-</code></pre>
-
-<h4 id="merge-branch-into-master"><strong>Merge branch into master</strong></h4>
-
-<pre><code>git merge &lt;branch&gt;
-</code></pre>
-
-<h4 id="stage-all-modified-files"><strong>Stage all modified files</strong></h4>
-
-<pre><code>git add -u
-</code></pre>
+<p>With a new local git that has never been linked to remote, first create a new Github repo. Then:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git remote add origin &lt;remote repo URL&gt;
+git remote -v #just for verification
+git push origin master</code></pre></div></p>
 
   </section>
   

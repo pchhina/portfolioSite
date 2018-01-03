@@ -99,27 +99,26 @@
 
 <p>We start by downloading the data from the source and reading it into <code>R</code>. Feature vectors from training data are stored separately from outcome. Testing data is stored in a separate object and is used only in the final stage for predictions.</p>
 
-<pre><code class="language-r"># Load Packages
-library(caret)
-library(dplyr)
-library(ggplot2)
-library(corrplot)
-rm(list = ls())
-# Download Data
-src.trn &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;
-if (!file.exists(&quot;pml-training.csv&quot;)) {
-    download.file(url = src.trn, destfile = &quot;pml-training.csv&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Load Packages</span>
+<span style="color:#f92672">library</span>(caret)
+<span style="color:#f92672">library</span>(dplyr)
+<span style="color:#f92672">library</span>(ggplot2)
+<span style="color:#f92672">library</span>(corrplot)
+<span style="color:#66d9ef">rm</span>(<span style="color:#66d9ef">list</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">ls</span>())
+<span style="color:#75715e"># Download Data</span>
+src.trn <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&#34;</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">file.exists</span>(<span style="color:#e6db74">&#34;pml-training.csv&#34;</span>)) {
+    download.file(url <span style="color:#f92672">=</span> src.trn, destfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pml-training.csv&#34;</span>)
 }
-src.test &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;
-if (!file.exists(&quot;pml-testing.csv&quot;)) {
-    download.file(url = src.test, destfile = &quot;pml-testing.csv&quot;)
+src.test <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&#34;</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">file.exists</span>(<span style="color:#e6db74">&#34;pml-testing.csv&#34;</span>)) {
+    download.file(url <span style="color:#f92672">=</span> src.test, destfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pml-testing.csv&#34;</span>)
 }
-training &lt;- read.csv(&quot;pml-training.csv&quot;)
-training_X &lt;- training[, -160]
-training_Y &lt;- training[, 160]
-testing &lt;- read.csv(&quot;pml-testing.csv&quot;)
-testing_X &lt;- testing[, -160]
-</code></pre>
+training <span style="color:#f92672">&lt;-</span> read.csv(<span style="color:#e6db74">&#34;pml-training.csv&#34;</span>)
+training_X <span style="color:#f92672">&lt;-</span> training[, <span style="color:#ae81ff">-160</span>]
+training_Y <span style="color:#f92672">&lt;-</span> training[, <span style="color:#ae81ff">160</span>]
+testing <span style="color:#f92672">&lt;-</span> read.csv(<span style="color:#e6db74">&#34;pml-testing.csv&#34;</span>)
+testing_X <span style="color:#f92672">&lt;-</span> testing[, <span style="color:#ae81ff">-160</span>]</code></pre></div>
 
 <h3 id="exploratory-data-analysis-and-feature-selection">Exploratory Data Analysis and Feature Selection</h3>
 
@@ -131,11 +130,9 @@ testing_X &lt;- testing[, -160]
 
 <p>We will first identify number of NAs in each column.</p>
 
-<pre><code class="language-r"># count number os NAs in each variable
-table(sapply(training_X, function(x) sum(is.na(x))))
-</code></pre>
-
-<p><table style="width:50%; border:1px solid grey;">
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># count number os NAs in each variable</span>
+<span style="color:#66d9ef">table</span>(<span style="color:#66d9ef">sapply</span>(training_X, <span style="color:#66d9ef">function</span>(x) <span style="color:#66d9ef">sum</span>(<span style="color:#66d9ef">is.na</span>(x))))</code></pre></div>
+ <table style="width:50%; border:1px solid grey;">
   <tr>
     <th>0</th>
     <th>19216</th>
@@ -148,46 +145,43 @@ table(sapply(training_X, function(x) sum(is.na(x))))
 
 <p>The table above shows that 92 variables have no NAs while there are 67 variables with 98% missing values. With so many NA values for these variables, it is probably good to remove those variables.</p>
 
-<pre><code class="language-r">training.na &lt;- sapply(training_X, function(x) ((sum(is.na(x)))/dim(training_X)[1]) &gt; 
-    0.95)
-training.small &lt;- training_X[, !training.na]
-testing.small &lt;- testing_X[, !training.na]
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">training.na <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">sapply</span>(training_X, <span style="color:#66d9ef">function</span>(x) ((<span style="color:#66d9ef">sum</span>(<span style="color:#66d9ef">is.na</span>(x)))<span style="color:#f92672">/</span><span style="color:#66d9ef">dim</span>(training_X)[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">&gt;</span> 
+    <span style="color:#ae81ff">0.95</span>)
+training.small <span style="color:#f92672">&lt;-</span> training_X[, <span style="color:#f92672">!</span>training.na]
+testing.small <span style="color:#f92672">&lt;-</span> testing_X[, <span style="color:#f92672">!</span>training.na]</code></pre></div>
 
 <h4 id="near-zero-variance-features">Near Zero Variance Features</h4>
 
 <p>Now we will identify and remove near zero variance features. The cutoff used for the ratio of the most common value to the second most common value is 2. The cutoff for the percentage of distinct values out of the number of total samples used is 20. In addition, some redundant variables (timestamps, names etc.) are also removed.</p>
 
-<pre><code class="language-r"># Remove near zero variance columns
-remove_cols &lt;- nearZeroVar(training.small, names = TRUE, freqCut = 2, uniqueCut = 20)
-allCols &lt;- names(training.small)
-training.smaller &lt;- training.small[, setdiff(allCols, remove_cols)]
-testing.smaller &lt;- testing.small[, setdiff(allCols, remove_cols)]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Remove near zero variance columns</span>
+remove_cols <span style="color:#f92672">&lt;-</span> nearZeroVar(training.small, names <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, freqCut <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, uniqueCut <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>)
+allCols <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">names</span>(training.small)
+training.smaller <span style="color:#f92672">&lt;-</span> training.small[, <span style="color:#66d9ef">setdiff</span>(allCols, remove_cols)]
+testing.smaller <span style="color:#f92672">&lt;-</span> testing.small[, <span style="color:#66d9ef">setdiff</span>(allCols, remove_cols)]
 
-# Remove redundant variables
-rm.var &lt;- names(training.smaller) %in% c(&quot;X&quot;, &quot;user_name&quot;, &quot;raw_timestamp_part_1&quot;, 
-    &quot;raw_timestamp_part_2&quot;, &quot;cvtd_timestamp&quot;)
-training.X &lt;- training.smaller[!rm.var]
-testing.X &lt;- testing.smaller[!rm.var]
-</code></pre>
+<span style="color:#75715e"># Remove redundant variables</span>
+rm.var <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">names</span>(training.smaller) <span style="color:#f92672">%in%</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;X&#34;</span>, <span style="color:#e6db74">&#34;user_name&#34;</span>, <span style="color:#e6db74">&#34;raw_timestamp_part_1&#34;</span>, 
+    <span style="color:#e6db74">&#34;raw_timestamp_part_2&#34;</span>, <span style="color:#e6db74">&#34;cvtd_timestamp&#34;</span>)
+training.X <span style="color:#f92672">&lt;-</span> training.smaller[<span style="color:#f92672">!</span>rm.var]
+testing.X <span style="color:#f92672">&lt;-</span> testing.smaller[<span style="color:#f92672">!</span>rm.var]</code></pre></div>
 
 <h4 id="correlated-features">Correlated Features</h4>
 
 <p>Finally, we identify the features that are highly correlated and remove pairwise features with absolute correlation of 0.8 or greater. The two plots below show the correlation matrix of all features before and after removing the correlated variables.</p>
 
-<pre><code class="language-r"># Remove highly correlated variables
-corr.mat &lt;- cor(training.X)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Remove highly correlated variables</span>
+corr.mat <span style="color:#f92672">&lt;-</span> cor(training.X)
 
-corr.high &lt;- findCorrelation(corr.mat, cutoff = 0.8)
-names(training.X)[corr.high]
-training.X.uncorr &lt;- training.X[, -corr.high]
-testing.X.uncorr &lt;- testing.X[, -corr.high]
-par(mfrow = c(1, 2))
-corrplot(corr.mat, order = &quot;hclust&quot;, tl.pos = &quot;n&quot;)
-corrplot(cor(training.X.uncorr), order = &quot;hclust&quot;, tl.pos = &quot;n&quot;)
-mtext(&quot;Correlation Plot: Before and after highly correlated variables removed&quot;, 
-    side = 3, outer = TRUE, line = -3)
-</code></pre>
+corr.high <span style="color:#f92672">&lt;-</span> findCorrelation(corr.mat, cutoff <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.8</span>)
+<span style="color:#66d9ef">names</span>(training.X)[corr.high]
+training.X.uncorr <span style="color:#f92672">&lt;-</span> training.X[, <span style="color:#f92672">-</span>corr.high]
+testing.X.uncorr <span style="color:#f92672">&lt;-</span> testing.X[, <span style="color:#f92672">-</span>corr.high]
+par(mfrow <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>))
+corrplot(corr.mat, order <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hclust&#34;</span>, tl.pos <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>)
+corrplot(cor(training.X.uncorr), order <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hclust&#34;</span>, tl.pos <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>)
+mtext(<span style="color:#e6db74">&#34;Correlation Plot: Before and after highly correlated variables removed&#34;</span>, 
+    side <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, outer <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, line <span style="color:#f92672">=</span> <span style="color:#ae81ff">-3</span>)</code></pre></div>
 
 
 <figure >
@@ -208,9 +202,7 @@ mtext(&quot;Correlation Plot: Before and after highly correlated variables remov
 
 <h4 id="model-results">Model Results</h4>
 
-<pre><code class="language-r">plot(modelknn)
-</code></pre>
-
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">plot(modelknn)</code></pre></div>
 
 <figure >
     
@@ -219,10 +211,7 @@ mtext(&quot;Correlation Plot: Before and after highly correlated variables remov
     
 </figure>
 
-
-<pre><code class="language-r">plot(modelrpart)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">plot(modelrpart)</code></pre></div>
 
 <figure >
     
@@ -231,10 +220,7 @@ mtext(&quot;Correlation Plot: Before and after highly correlated variables remov
     
 </figure>
 
-
-<pre><code class="language-r">plot(modelrf)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">plot(modelrf)</code></pre></div>
 
 <figure >
     
@@ -243,10 +229,7 @@ mtext(&quot;Correlation Plot: Before and after highly correlated variables remov
     
 </figure>
 
-
-<pre><code class="language-r">plot(modelglm)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">plot(modelglm)</code></pre></div>
 
 <figure >
     
@@ -254,7 +237,7 @@ mtext(&quot;Correlation Plot: Before and after highly correlated variables remov
     
     
 </figure>
-
+</p>
 
 <p>From the accuracy plots above, we note that <em>k nearest neighbors</em> have accuracy ranging from 74% to 78% with best accuracy achieved with 5 neighbors. <em>Classification tree</em> is only 33%-53% accurate with best accuracy for 0.02 complexity parameter. <em>glmnet</em> achieved best accuracy of 54%. Finally, <em>random forest</em> has accuracy ranging from 97% to 98% with best accuracy achieved with 18 randomly selected predictors.</p>
 
@@ -262,13 +245,11 @@ mtext(&quot;Correlation Plot: Before and after highly correlated variables remov
 
 <p>For model selection we will compare accuracy of all four models and pick the one with largest accuracy. Since we have used 5-fold cross validation in our model building in previous section, we will get confidence intervals from those accuracy estimates so we can make an informed selection decision.</p>
 
-<pre><code class="language-r"># Model Selection
-mdl.list &lt;- list(glmnet = modelglm, rf = modelrf, knn = modelknn, rpart = modelrpart)
-resamps &lt;- resamples(mdl.list)
-summary(resamps)
-dotplot(resamps)
-</code></pre>
-
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Model Selection</span>
+mdl.list <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">list</span>(glmnet <span style="color:#f92672">=</span> modelglm, rf <span style="color:#f92672">=</span> modelrf, knn <span style="color:#f92672">=</span> modelknn, rpart <span style="color:#f92672">=</span> modelrpart)
+resamps <span style="color:#f92672">&lt;-</span> resamples(mdl.list)
+<span style="color:#66d9ef">summary</span>(resamps)
+dotplot(resamps)</code></pre></div>
 
 <figure >
     
@@ -276,7 +257,7 @@ dotplot(resamps)
     
     
 </figure>
-
+</p>
 
 <p>It is evident that random forest model gives the best accuracy among the choices explored. We will select this as our final model for evaluating the test data in the next section.</p>
 
@@ -284,9 +265,8 @@ dotplot(resamps)
 
 <p>Finally we are going to test the model using 20 data points provided in the test set.</p>
 
-<pre><code class="language-r">testPred &lt;- predict(mdl.list, newdata = testing.X.uncorr)
-testPred$rf
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">testPred <span style="color:#f92672">&lt;-</span> predict(mdl.list, newdata <span style="color:#f92672">=</span> testing.X.uncorr)
+testPred<span style="color:#f92672">$</span>rf</code></pre></div>
 
 <h3 id="acknowledgements">Acknowledgements</h3>
 
