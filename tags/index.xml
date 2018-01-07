@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 26 Dec 2017 21:40:42 -0600</lastBuildDate>
     
 	<atom:link href="https://pchhina.github.io/portfolioSite/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git</title>
+      <link>https://pchhina.github.io/portfolioSite/tags/git/</link>
+      <pubDate>Tue, 26 Dec 2017 21:40:42 -0600</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://pchhina.github.io/portfolioSite/tags/machine-learning/</link>
+      <pubDate>Sat, 30 Dec 2017 05:04:40 -0600</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://pchhina.github.io/portfolioSite/tags/r/</link>
+      <pubDate>Sat, 30 Dec 2017 05:04:40 -0600</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/tags/r/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
