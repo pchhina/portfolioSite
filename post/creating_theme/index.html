@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Creating a New ggplot theme &middot;  Paramjot Singh" />
+  
+  <meta property="og:site_name" content="Paramjot Singh" />
+  <meta property="og:url" content="https://pchhina.github.io/portfolioSite/post/creating_theme/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:published_time" content="2018-02-08T19:32:52-06:00" />
+  
+  <meta property="og:article:tag" content="R" />
+  
+  
+
+  <title>
+     Creating a New ggplot theme &middot;  Paramjot Singh
+  </title>
+
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/blog.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="https://pchhina.github.io/portfolioSite/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://pchhina.github.io/portfolioSite/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h2> 
+      <div class="sns-links hidden-print">
+  
+  <a href="#ZgotmplZ">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+      
+
+      <ul class="pager">
+      <li class="">
+      <a href="https://pchhina.github.io/portfolioSite/" class="btn btn-lg">
+        <span aria-hidden="true">&laquo;</span>
+        &nbsp; Home &nbsp;
+
+      </a>
+      </li>
+      </ul>
+      
+      
+
+    </section>
+  </header>
+  <main class="container">
+
+
+
+<article class="single-title">
+<div class="row">
+   <div class="col-lg-10 col-lg-offset-1" class="center-block">
+  <header>
+
+    <h1 class="text-primary">Creating a New ggplot theme</h1>
+
+    <div class="post-meta clearfix">
+      <div class="post-date">
+        Posted on
+        <time datetime="2018-02-08T19:32:52-06:00">
+          Feb 8, 2018
+        </time>
+      </div>
+      <div class="pull-right">
+        
+        <span class="post-tag"><a href="https://pchhina.github.io/portfolioSite//tags/r">#R</a></span>
+        
+        
+      </div>
+    </div>
+  </header>
+ 
+  <section class="single" style="color:#2c3e50; font-size:18px;">
+    
+
+<h1 id="introduction">Introduction</h1>
+
+<p>This post introduces simple steps on how to create your own ggplot2 theme. Of course, it will not go into details of changing all the aspects. Instead, it will highlight the process using few useful elements.</p>
+
+<p>Theme is basically a set of pre-defined(default) values for elements that make up a plot in ggplot2 library. Major elements are:</p>
+
+<ul>
+<li>Plot, the outermost area used by a plot. Think of this as let&rsquo;s say your A4 sheet on which you want to draw a plot.</li>
+<li>Panel, this is the plotting area. This is defined by a rectangle inside the panel.</li>
+<li>Legend, another rectangle defining the plot legend. This can be anywhere in the panel, inside or outside of the plot.</li>
+<li>x-axis</li>
+<li>y-axis</li>
+<li>Strip, I don&rsquo;t know what this is, yet!</li>
+</ul>
+
+<h2 id="default-theme">Default Theme</h2>
+
+<p>Instead of rewriting properties of all elements, it is more efficient to pick a theme that is closer to what you want and the just adjust it. In my case, I like the <code>theme_bw</code> so I will use that as a starting point. A scatter plot on this theme looks like this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">theme_set(theme_bw())
+ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</code></pre></div>
+
+
+<figure >
+    
+        <img src="../images/basetheme-1.png" width="70%" />
+    
+    
+</figure>
+
+
+<h2 id="new-theme">New Theme</h2>
+
+<p>I like white background and black border of this theme. Few changes I would like to make to this theme are:</p>
+
+<ul>
+<li>remove gridlines. I personally think gridlines do not server much purpose while doing analysis and are rather a distraction.</li>
+<li>increase the base font size a bit to be more clear.</li>
+<li>note that the axis marker font is grey color</li>
+</ul>
+
+<p>To make these changes, we will simply &lsquo;add&rsquo; these elements to our base theme:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">theme_simple <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>() {
+    theme_bw(base_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>,
+             base_family <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">%+replace%</span>
+    theme(panel.grid <span style="color:#f92672">=</span> element_blank(),
+          axis.text <span style="color:#f92672">=</span> element_text(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>))
+}</code></pre></div>
+
+<p>Notice that I have created a new function for this theme instead of just storing it in an object. This makes it flexible since now it can be sourced in any project and used. Let&rsquo;s see how our plot looks now with the new theme.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">theme_set(theme_simple())
+ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</code></pre></div>
+
+
+<figure >
+    
+        <img src="../images/plot-1.png" width="70%" />
+    
+    
+</figure>
+
+
+<p>It looks more clear now bringing more attention to the data instead of theme or plot elements. You can find what else can be changed by <code>?theme</code>.</p>
+
+  </section>
+  
+  <footer>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        
+      </div>
+     
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="https://pchhina.github.io/portfolioSite/post/exercise/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+
+      <li>
+      <a href="https://pchhina.github.io/portfolioSite//post">&uarr; All Posts</a>
+      </li>
+
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+  </div>
+  </div>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="#ZgotmplZ">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <script src="https://pchhina.github.io/portfolioSite/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  
+</body>
+</html>
+
