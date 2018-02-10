@@ -3,7 +3,7 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content=" Creating a New ggplot theme &middot;  Paramjot Singh" />
+  <meta property="og:title" content=" Creating a New ggplot2 Theme &middot;  Paramjot Singh" />
   
   <meta property="og:site_name" content="Paramjot Singh" />
   <meta property="og:url" content="https://pchhina.github.io/portfolioSite/post/creating_theme/" />
@@ -18,7 +18,7 @@
   
 
   <title>
-     Creating a New ggplot theme &middot;  Paramjot Singh
+     Creating a New ggplot2 Theme &middot;  Paramjot Singh
   </title>
 
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/bootstrap.min.css" />
@@ -75,7 +75,7 @@
    <div class="col-lg-10 col-lg-offset-1" class="center-block">
   <header>
 
-    <h1 class="text-primary">Creating a New ggplot theme</h1>
+    <h1 class="text-primary">Creating a New ggplot2 Theme</h1>
 
     <div class="post-meta clearfix">
       <div class="post-date">
@@ -96,24 +96,21 @@
   <section class="single" style="color:#2c3e50; font-size:18px;">
     
 
-<h1 id="introduction">Introduction</h1>
-
 <p>This post introduces simple steps on how to create your own ggplot2 theme. Of course, it will not go into details of changing all the aspects. Instead, it will highlight the process using few useful elements.</p>
 
 <p>Theme is basically a set of pre-defined(default) values for elements that make up a plot in ggplot2 library. Major elements are:</p>
 
 <ul>
 <li>Plot, the outermost area used by a plot. Think of this as let&rsquo;s say your A4 sheet on which you want to draw a plot.</li>
-<li>Panel, this is the plotting area. This is defined by a rectangle inside the panel.</li>
+<li>Panel, this is the actual plotting area. This is defined by a rectangle inside the ploting area.</li>
 <li>Legend, another rectangle defining the plot legend. This can be anywhere in the panel, inside or outside of the plot.</li>
 <li>x-axis</li>
 <li>y-axis</li>
-<li>Strip, I don&rsquo;t know what this is, yet!</li>
 </ul>
 
-<h2 id="default-theme">Default Theme</h2>
+<h3 id="default-theme">Default Theme</h3>
 
-<p>Instead of rewriting properties of all elements, it is more efficient to pick a theme that is closer to what you want and the just adjust it. In my case, I like the <code>theme_bw</code> so I will use that as a starting point. A scatter plot on this theme looks like this:</p>
+<p>Instead of rewriting properties of all elements, it is more efficient to pick a theme that is closer to what you want and make some adjustments. In my case, I like the <code>theme_bw</code> so I will use that as a starting point. A scatter plot on this theme looks like this:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">theme_set(theme_bw())
 ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</code></pre></div>
@@ -127,14 +124,14 @@ ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</
 </figure>
 
 
-<h2 id="new-theme">New Theme</h2>
+<h3 id="new-theme">New Theme</h3>
 
 <p>I like white background and black border of this theme. Few changes I would like to make to this theme are:</p>
 
 <ul>
-<li>remove gridlines. I personally think gridlines do not server much purpose while doing analysis and are rather a distraction.</li>
-<li>increase the base font size a bit to be more clear.</li>
-<li>note that the axis marker font is grey color</li>
+<li>Remove gridlines. I personally think gridlines do not serve much purpose while doing analysis and are rather a distraction.</li>
+<li>Increase the base font size a bit to be more clear.</li>
+<li>Note that the axis marker font is grey color while the axis title is black. I will change these to black for consistency.</li>
 </ul>
 
 <p>To make these changes, we will simply &lsquo;add&rsquo; these elements to our base theme:</p>
@@ -161,6 +158,14 @@ ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</
 
 
 <p>It looks more clear now bringing more attention to the data instead of theme or plot elements. You can find what else can be changed by <code>?theme</code>.</p>
+
+<h3 id="additional-resources">Additional Resources</h3>
+
+<p>In case you want to dig deeper into the topic of customizing themes, here are some additional resource:</p>
+
+<ul>
+<li><a href="https://bookdown.org/rdpeng/RProgDA/building-a-new-theme.html">Building a New Theme</a> - From Roger Peng&rsquo;s book.</li>
+</ul>
 
   </section>
   

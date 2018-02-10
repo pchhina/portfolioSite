@@ -98,8 +98,6 @@
   <section class="single" style="color:#2c3e50; font-size:18px;">
     
 
-<h2 id="synopsis">Synopsis</h2>
-
 <p>This post aims to explore the NOAA Storm Database and answer some basic questions about severe weather events focusing on their economic and health impact. The U.S. National Oceanic and Atmospheric Administration&rsquo;s (NOAA) storm database tracks characteristics of major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage. The events in the database start in the year 1950 and end in November 2011. This report concludes the following:</p>
 
 <ul>
@@ -110,14 +108,13 @@
 
 <h2 id="data-processing">Data Processing</h2>
 
-<h3 id="loading-libraries">Loading Libraries</h3>
-
+<p>First, we load the necessary libraries:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#66d9ef">rm</span>(<span style="color:#66d9ef">list</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">ls</span>())
 <span style="color:#f92672">library</span>(lubridate)
 <span style="color:#f92672">library</span>(dplyr)
-<span style="color:#f92672">library</span>(ggplot2)</code></pre></div>
+<span style="color:#f92672">library</span>(ggplot2)</code></pre></div></p>
 
-<p>Now we are going to import data using <code>download.file</code> command and then this data is read into data frame using <code>read.csv</code> command. After reading the data, date variable (BGN_DATE) is transformed into &lsquo;date&rsquo; class while event type (EVTYPE) is transformed into factor. The data is finally stored as tibble in <code>data1</code>.</p>
+<p>Now we are going to import data using <code>download.file</code> command and then read into data frame using <code>read.csv</code> command. After reading the data, date variable (BGN_DATE) is transformed into &lsquo;date&rsquo; class while event type (EVTYPE) is transformed into factor. The data is finally stored as tibble in <code>data1</code>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">url <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2&#34;</span>
 download.file(<span style="color:#66d9ef">url</span>,<span style="color:#e6db74">&#34;./datadown.csv.bz2&#34;</span>)
@@ -130,7 +127,7 @@ data1 <span style="color:#f92672">&lt;-</span> tbl_df(data)</code></pre></div>
 
 <h2 id="results">Results</h2>
 
-<h3 id="data-analysis-to-find-events-causing-most-fatalities">Data analysis to find events causing most fatalities</h3>
+<h3 id="fatalities">Fatalities</h3>
 
 <p>We will first process the data to find events that caused most fatalities. We use <code>dplyr</code> package functions for this to first group the data by event type followed by adding fatalities and finally filtering events that caused 90% of the total fatalities.</p>
 
@@ -160,7 +157,7 @@ ggplot(data<span style="color:#f92672">=</span>fatal,aes(x<span style="color:#f9
 
 <p>The plot shows that tornadoes are the largest cause of fatalities resulting in more than 5500 deaths. These are followed by excessive heat causing close to 2000 deaths. Other events causing large fatalities include flash floods, lightning and thunderstorm winds.</p>
 
-<h3 id="data-analysis-to-find-events-causing-most-injuries">Data analysis to find events causing most injuries</h3>
+<h3 id="injuries">Injuries</h3>
 
 <p>Processing data from injuries follows the same method described earlier to process fatalities data.</p>
 
@@ -190,7 +187,7 @@ ggplot(data<span style="color:#f92672">=</span>injury,aes(x<span style="color:#f
 
 <p>It is clear from the above plot that tornadoes are leading causes of injuries. These are followed by thunderstorm winds, floods, excessive heat and lightning as other major events causing injuries.</p>
 
-<h3 id="data-analysis-to-find-events-causing-most-economic-damage">Data analysis to find events causing most economic damage</h3>
+<h3 id="economic-damage">Economic Damage</h3>
 
 <p>Economic damage has variety of units that we need to consolidate first. For this we want to work with only economic variables so we select appropriate columns. We then create a table (using <code>data.frame</code>) for key-value pairs of <code>PROPDMGEXP</code> and their values. Similar method is applied for <code>CROPDMGEXP</code>.</p>
 
