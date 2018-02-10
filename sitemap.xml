@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://pchhina.github.io/portfolioSite/post/package_building/</loc>
+    <lastmod>2018-02-10T05:04:40-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pchhina.github.io/portfolioSite/post/creating_theme/</loc>
     <lastmod>2018-02-08T19:32:52-06:00</lastmod>
   </url>
@@ -51,19 +56,19 @@
   
   <url>
     <loc>https://pchhina.github.io/portfolioSite/</loc>
-    <lastmod>2018-02-08T19:32:52-06:00</lastmod>
+    <lastmod>2018-02-10T05:04:40-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://pchhina.github.io/portfolioSite/post/</loc>
-    <lastmod>2018-02-08T19:32:52-06:00</lastmod>
+    <lastmod>2018-02-10T05:04:40-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://pchhina.github.io/portfolioSite/tags/r/</loc>
-    <lastmod>2018-02-08T19:32:52-06:00</lastmod>
+    <lastmod>2018-02-10T05:04:40-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -76,6 +81,12 @@
   <url>
     <loc>https://pchhina.github.io/portfolioSite/categories/technology/</loc>
     <lastmod>2017-12-30T05:04:40-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pchhina.github.io/portfolioSite/categories/tools/</loc>
+    <lastmod>2018-02-10T05:04:40-06:00</lastmod>
     <priority>0</priority>
   </url>
   

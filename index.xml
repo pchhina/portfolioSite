@@ -6,10 +6,20 @@
     <description>Recent content on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Feb 2018 19:32:52 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2018 05:04:40 -0600</lastBuildDate>
     
 	<atom:link href="https://pchhina.github.io/portfolioSite/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building R package using command line options</title>
+      <link>https://pchhina.github.io/portfolioSite/post/package_building/</link>
+      <pubDate>Sat, 10 Feb 2018 05:04:40 -0600</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/package_building/</guid>
+      <description>This post describes the process of building an R package without using RStudio. This will come in handy for anyone who is using vim (and of course Nvim-R!) as a code editor for their development work. Alright, let&amp;rsquo;s get moving. We are going to create a small package offering a new ggplot theme to demonstrate the process.
+Step 0: Install the required packages install.packages(c(&amp;#34;devtools&amp;#34;, &amp;#34;roxygen2&amp;#34;, &amp;#34;testthat&amp;#34;, &amp;#34;knitr&amp;#34;)) library(devtools) has_devel() The command has_devel() basically checks that everything is installed as expected.</description>
+    </item>
     
     <item>
       <title>Creating a New ggplot theme</title>
