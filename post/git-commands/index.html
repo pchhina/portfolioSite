@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/blog.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/github.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/styles/tomorrow-night.css" />
+  <script src="https://pchhina.github.io/portfolioSite//js/highlight.pack.js"></script>
+   <script>
+    hljs.initHighlightingOnLoad();
+   </script>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
   <link rel="shortcut icon" href="https://pchhina.github.io/portfolioSite/images/favicon.ico" />
   <link rel="apple-touch-icon" href="https://pchhina.github.io/portfolioSite/images/apple-touch-icon.png" />
@@ -102,48 +107,74 @@
 
 <p>This is just a list of git commands I am currently using. There are tons of tutorials out there as well as quite a few cheat sheets. While those are mostly comprehensive resources, I tend to get distracted and try to learn all commands at once without using them in real projects. That doesn&rsquo;t help much.</p>
 
-<p><strong>Initialize a local git repository</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git init</code></pre></div></p>
+<p><strong>Initialize a local git repository</strong></p>
 
-<p><strong>Cloning an existing project from github</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git clone &lt;project url here&gt;</code></pre></div></p>
+<pre><code class="language-git">git init
+</code></pre>
 
-<p><strong>Status Check</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git status</code></pre></div></p>
+<p><strong>Cloning an existing project from github</strong></p>
 
-<p><strong>Create a branch and check it out</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git checkout -b &lt;branch&gt;</code></pre></div></p>
+<pre><code class="language-git">git clone &lt;project url here&gt;
+</code></pre>
 
-<p><strong>List all branches and active branch</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git branch</code></pre></div></p>
+<p><strong>Status Check</strong></p>
 
-<p><strong>Stage specific files, all files, all modified files</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git add &lt;files&gt;
+<pre><code class="language-git">git status
+</code></pre>
+
+<p><strong>Create a branch and check it out</strong></p>
+
+<pre><code class="language-git">git checkout -b &lt;branch&gt;
+</code></pre>
+
+<p><strong>List all branches and active branch</strong></p>
+
+<pre><code class="language-git">git branch
+</code></pre>
+
+<p><strong>Stage specific files, all files, all modified files</strong></p>
+
+<pre><code class="language-git">git add &lt;files&gt;
 git add --all
-git add -u</code></pre></div></p>
+git add -u
+</code></pre>
 
-<p><strong>Unstage a file</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git reset HEAD &lt;file-name&gt;</code></pre></div></p>
+<p><strong>Unstage a file</strong></p>
 
-<p><strong>Commit changes</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git commit -m &#34;commit message&#34;</code></pre></div></p>
+<pre><code class="language-git">git reset HEAD &lt;file-name&gt;
+</code></pre>
 
-<p><strong>Check log</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git log</code></pre></div></p>
+<p><strong>Commit changes</strong></p>
 
-<p><strong>Merge branch into master</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git merge &lt;branch&gt;</code></pre></div></p>
+<pre><code class="language-git">git commit -m &quot;commit message&quot;
+</code></pre>
 
-<p><strong>Delete a branch</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git branch -d &lt;branch&gt;</code></pre></div></p>
+<p><strong>Check log</strong></p>
 
-<p><strong>Push changes to remote(master)</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git push origin master</code></pre></div></p>
+<pre><code class="language-git">git log
+</code></pre>
 
-<p>With a new local git that has never been linked to remote, first create a new Github repo. Then:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git remote add origin &lt;remote repo URL&gt;
+<p><strong>Merge branch into master</strong></p>
+
+<pre><code class="language-git">git merge &lt;branch&gt;
+</code></pre>
+
+<p><strong>Delete a branch</strong></p>
+
+<pre><code class="language-git">git branch -d &lt;branch&gt;
+</code></pre>
+
+<p><strong>Push changes to remote(master)</strong></p>
+
+<pre><code class="language-git">git push origin master
+</code></pre>
+
+<p>With a new local git that has never been linked to remote, first create a new Github repo. Then:</p>
+
+<pre><code class="language-git">git remote add origin &lt;remote repo URL&gt;
 git remote -v #just for verification
-git push origin master</code></pre></div></p>
+git push origin master
+</code></pre>
 
 <h3 id="care-to-learn-more">Care to learn more?</h3>
 

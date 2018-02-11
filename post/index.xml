@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Feb 2018 05:04:40 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://pchhina.github.io/portfolioSite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test for Rmd Files</title>
+      <link>https://pchhina.github.io/portfolioSite/post/persistent_plots/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://pchhina.github.io/portfolioSite/post/persistent_plots/</guid>
+      <description>In this post, I describe the importance of persistent plots while carrying out a analysis. A case is made for simpler and persistent plots and the process to create the plots is demonstrated with an example. Finally, a package is created to stitch things together in a coherent fashion.
+With the amount of available options in R today to create plots, it is easy to get distracted and miss the point of using plots in first place - to bring to attention something unique about the data which otherwise could be difficult, if not impossible, just looking at the raw numbers.</description>
+    </item>
     
     <item>
       <title>Building R Package using Command Line</title>
@@ -18,7 +28,7 @@
       
       <guid>https://pchhina.github.io/portfolioSite/post/package_building/</guid>
       <description>This post describes the process of building an R package without using RStudio. This can come in handy for anyone who is using vim (and of course Nvim-R!) as a code editor for their development work. Alright, let&amp;rsquo;s get moving. We are going to create a small package offering a new ggplot theme to demonstrate the process.
-Step 0: Install the required packages install.packages(c(&amp;#34;devtools&amp;#34;, &amp;#34;roxygen2&amp;#34;, &amp;#34;testthat&amp;#34;, &amp;#34;knitr&amp;#34;)) library(devtools) has_devel() The command has_devel() basically checks that everything is installed as expected.</description>
+Step 0: Install the required packages install.packages(c(&amp;quot;devtools&amp;quot;, &amp;quot;roxygen2&amp;quot;, &amp;quot;testthat&amp;quot;, &amp;quot;knitr&amp;quot;)) library(devtools) has_devel()  The command has_devel() basically checks that everything is installed as expected.</description>
     </item>
     
     <item>
@@ -57,8 +67,8 @@ Theme is basically a set of pre-defined(default) values for elements that make u
       
       <guid>https://pchhina.github.io/portfolioSite/post/git-commands/</guid>
       <description>This is just a list of git commands I am currently using. There are tons of tutorials out there as well as quite a few cheat sheets. While those are mostly comprehensive resources, I tend to get distracted and try to learn all commands at once without using them in real projects. That doesn&amp;rsquo;t help much.
-Initialize a local git repository git init
-Cloning an existing project from github git clone &amp;lt;project url here&amp;gt;</description>
+Initialize a local git repository
+git init  Cloning an existing project from github</description>
     </item>
     
     <item>

@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/blog.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/github.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/styles/tomorrow-night.css" />
+  <script src="https://pchhina.github.io/portfolioSite//js/highlight.pack.js"></script>
+   <script>
+    hljs.initHighlightingOnLoad();
+   </script>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
   <link rel="shortcut icon" href="https://pchhina.github.io/portfolioSite/images/favicon.ico" />
   <link rel="apple-touch-icon" href="https://pchhina.github.io/portfolioSite/images/apple-touch-icon.png" />
@@ -112,8 +117,9 @@
 
 <p>Instead of rewriting properties of all elements, it is more efficient to pick a theme that is closer to what you want and make some adjustments. In my case, I like the <code>theme_bw</code> so I will use that as a starting point. A scatter plot on this theme looks like this:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">theme_set(theme_bw())
-ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</code></pre></div>
+<pre><code class="language-r">theme_set(theme_bw())
+ggplot(mpg, aes(displ, hwy)) + geom_point()
+</code></pre>
 
 
 <figure >
@@ -136,17 +142,19 @@ ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</
 
 <p>To make these changes, we will simply &lsquo;add&rsquo; these elements to our base theme:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">theme_simple <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>() {
-    theme_bw(base_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>,
-             base_family <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">%+replace%</span>
-    theme(panel.grid <span style="color:#f92672">=</span> element_blank(),
-          axis.text <span style="color:#f92672">=</span> element_text(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>))
-}</code></pre></div>
+<pre><code class="language-r">theme_simple &lt;- function() {
+    theme_bw(base_size = 14,
+             base_family = &quot;&quot;) %+replace%
+    theme(panel.grid = element_blank(),
+          axis.text = element_text(color = &quot;black&quot;))
+}
+</code></pre>
 
 <p>Notice that I have created a new function for this theme instead of just storing it in an object. This makes it flexible since now it can be sourced in any project and used. Let&rsquo;s see how our plot looks now with the new theme.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">theme_set(theme_simple())
-ggplot(mpg, aes(displ, hwy)) <span style="color:#f92672">+</span> geom_point()</code></pre></div>
+<pre><code class="language-r">theme_set(theme_simple())
+ggplot(mpg, aes(displ, hwy)) + geom_point()
+</code></pre>
 
 
 <figure >

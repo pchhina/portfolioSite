@@ -18,7 +18,7 @@
       
       <guid>https://pchhina.github.io/portfolioSite/post/package_building/</guid>
       <description>This post describes the process of building an R package without using RStudio. This can come in handy for anyone who is using vim (and of course Nvim-R!) as a code editor for their development work. Alright, let&amp;rsquo;s get moving. We are going to create a small package offering a new ggplot theme to demonstrate the process.
-Step 0: Install the required packages install.packages(c(&amp;#34;devtools&amp;#34;, &amp;#34;roxygen2&amp;#34;, &amp;#34;testthat&amp;#34;, &amp;#34;knitr&amp;#34;)) library(devtools) has_devel() The command has_devel() basically checks that everything is installed as expected.</description>
+Step 0: Install the required packages install.packages(c(&amp;quot;devtools&amp;quot;, &amp;quot;roxygen2&amp;quot;, &amp;quot;testthat&amp;quot;, &amp;quot;knitr&amp;quot;)) library(devtools) has_devel()  The command has_devel() basically checks that everything is installed as expected.</description>
     </item>
     
     <item>

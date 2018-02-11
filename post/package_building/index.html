@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/blog.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/github.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/styles/tomorrow-night.css" />
+  <script src="https://pchhina.github.io/portfolioSite//js/highlight.pack.js"></script>
+   <script>
+    hljs.initHighlightingOnLoad();
+   </script>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
   <link rel="shortcut icon" href="https://pchhina.github.io/portfolioSite/images/favicon.ico" />
   <link rel="apple-touch-icon" href="https://pchhina.github.io/portfolioSite/images/apple-touch-icon.png" />
@@ -102,16 +107,19 @@
 
 <h3 id="step-0-install-the-required-packages">Step 0: Install the required packages</h3>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">install.packages(<span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;devtools&#34;</span>, <span style="color:#e6db74">&#34;roxygen2&#34;</span>, <span style="color:#e6db74">&#34;testthat&#34;</span>, <span style="color:#e6db74">&#34;knitr&#34;</span>))
-<span style="color:#f92672">library</span>(devtools)
-has_devel()</code></pre></div>
-The command <code>has_devel()</code> basically checks that everything is installed as expected. At the end of its output, you should see <code>TRUE</code> if everything goes alright.</p>
+<pre><code class="language-r">install.packages(c(&quot;devtools&quot;, &quot;roxygen2&quot;, &quot;testthat&quot;, &quot;knitr&quot;))
+library(devtools)
+has_devel()
+</code></pre>
+
+<p>The command <code>has_devel()</code> basically checks that everything is installed as expected. At the end of its output, you should see <code>TRUE</code> if everything goes alright.</p>
 
 <h3 id="step-1-create-a-package-directory">Step 1: Create a package directory</h3>
 
 <p>First, we are going to create the package directory where everything is going to reside related to this package. This will also generate some boilerplate files inside the package directory that we will edit soon. We will use the following command:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">create(<span style="color:#e6db74">&#34;~/projects/themeSimple&#34;</span>)</code></pre></div>
+<pre><code class="language-r">create(&quot;~/projects/themeSimple&quot;)
+</code></pre>
 
 <p>In this case, I have created a directory called &lsquo;themeSimple&rsquo; inside &lsquo;projects&rsquo; directory. <code>themeSimple</code> will also be the name of our package. It is generally not recommended to use both cases for the package name since it becomes difficult for folks to remember or type correctly when installing.</p>
 
@@ -121,9 +129,10 @@ The command <code>has_devel()</code> basically checks that everything is install
 
 <h3 id="step-3-git-it-out">Step 3: git it out!</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#f92672">$</span>git init
-<span style="color:#f92672">$</span>git add <span style="color:#ae81ff">.</span>
-<span style="color:#f92672">$</span>git commit </code></pre></div>
+<pre><code class="language-r">$git init
+$git add .
+$git commit 
+</code></pre>
 
 <h3 id="step-4-add-any-raw-data-if-needed">Step 4: Add any raw data if needed</h3>
 
@@ -133,7 +142,8 @@ The command <code>has_devel()</code> basically checks that everything is install
 
 <p>It is good idea to keep notes in .Rmd file so it can be converted into vignette later if needed. In that case, save the file in <code>/vignettes</code> directory. To have <code>devtools</code> automatically create this for you and populate it with boilerplate content, use:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">use_vignette(<span style="color:#e6db74">&#34;analysis&#34;</span>)</code></pre></div>
+<pre><code class="language-r">use_vignette(&quot;analysis&quot;)
+</code></pre>
 
 <p>In the above example, it will create &lsquo;analysis.Rmd&rsquo; in <code>/vignettes</code> directory.</p>
 
@@ -143,29 +153,35 @@ The command <code>has_devel()</code> basically checks that everything is install
 
 <h3 id="step-7-update-documentation">Step 7: Update documentation</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">document()</code></pre></div>
+<pre><code class="language-r">document()
+</code></pre>
 
 <p>This uses Roxygen2 to create/update NAMESPACE file and .Rd files in <code>/man</code> directory for each function.</p>
 
 <h3 id="step-8-build-package">Step 8: Build package</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">build(<span style="color:#e6db74">&#34;themeSimple&#34;</span>)</code></pre></div>
+<pre><code class="language-r">build(&quot;themeSimple&quot;)
+</code></pre>
 
 <p>This creates a *.tar.gz file that can be installed on any platform.</p>
 
 <h3 id="step-9-git-it">Step 9: git it!</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#f92672">$</span>git add <span style="color:#f92672">&lt;</span>files<span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">$</span>git commit</code></pre></div>
+<pre><code class="language-r">$git add &lt;files&gt;
+$git commit
+</code></pre>
 
 <h3 id="step-10-check-it">Step 10: Check it</h3>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">check()</code></pre></div>
-This runs all sorts of checks on the contents (including examples) of the package, and gives warnings/errors when it finds that things aren&rsquo;t right.</p>
+<pre><code class="language-r">check()
+</code></pre>
+
+<p>This runs all sorts of checks on the contents (including examples) of the package, and gives warnings/errors when it finds that things aren&rsquo;t right.</p>
 
 <h3 id="step-11-install-locally-to-test">Step 11: Install locally to test</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">install(build_vignettes <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)</code></pre></div>
+<pre><code class="language-r">install(build_vignettes = TRUE)
+</code></pre>
 
 <h3 id="step-12-upload-on-github">Step 12: Upload on Github</h3>
 
@@ -173,21 +189,25 @@ This runs all sorts of checks on the contents (including examples) of the packag
 
 <p>Connect local repo to Github repo:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#f92672">$</span>git remote add origin <span style="color:#f92672">&lt;</span>github repo name<span style="color:#f92672">&gt;</span></code></pre></div>
+<pre><code class="language-r">$git remote add origin &lt;github repo name&gt;
+</code></pre>
 
 <p>Push everything on Github:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#f92672">$</span>git push <span style="color:#f92672">-</span>u origin master</code></pre></div>
+<pre><code class="language-r">$git push -u origin master
+</code></pre>
 
 <h3 id="step-13-test-github-package">Step 13: Test Github package</h3>
 
 <p>Remove package from your installation:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">remove.packages(<span style="color:#e6db74">&#34;themeSimple&#34;</span>)</code></pre></div>
+<pre><code class="language-r">remove.packages(&quot;themeSimple&quot;)
+</code></pre>
 
 <p>Install package from Github:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">install_github(<span style="color:#e6db74">&#34;pchhina/themeSimple&#34;</span>)</code></pre></div>
+<pre><code class="language-r">install_github(&quot;pchhina/themeSimple&quot;)
+</code></pre>
 
 <h3 id="step-14-test">Step 14: Test</h3>
 
@@ -225,7 +245,7 @@ This runs all sorts of checks on the contents (including examples) of the packag
       </li>
 
       
-      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="https://pchhina.github.io/portfolioSite/post/persistent_plots/">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
   </footer>
