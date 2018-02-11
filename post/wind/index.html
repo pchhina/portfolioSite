@@ -23,6 +23,11 @@
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/blog.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/github.css" />
+  <link rel="stylesheet" href="https://pchhina.github.io/portfolioSite/css/styles/tomorrow-night.css" />
+  <script src="https://pchhina.github.io/portfolioSite//js/highlight.pack.js"></script>
+   <script>
+    hljs.initHighlightingOnLoad();
+   </script>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
   <link rel="shortcut icon" href="https://pchhina.github.io/portfolioSite/images/favicon.ico" />
   <link rel="apple-touch-icon" href="https://pchhina.github.io/portfolioSite/images/apple-touch-icon.png" />
@@ -84,21 +89,22 @@
       </div>
       <div class="pull-right">
         
+        
       </div>
     </div>
   </header>
  
   <section class="single" style="color:#2c3e50; font-size:18px;">
-    <script src="https://pchhina.github.io/portfolioSite/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="https://pchhina.github.io/portfolioSite/rmarkdown-libs/jquery/jquery.min.js"></script>
-<link href="https://pchhina.github.io/portfolioSite/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
-<script src="https://pchhina.github.io/portfolioSite/rmarkdown-libs/leaflet/leaflet.js"></script>
-<link href="https://pchhina.github.io/portfolioSite/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
-<link href="https://pchhina.github.io/portfolioSite/rmarkdown-libs/leaflet-label/leaflet.label.css" rel="stylesheet" />
-<script src="https://pchhina.github.io/portfolioSite/rmarkdown-libs/leaflet-label/leaflet.label.js"></script>
-<script src="https://pchhina.github.io/portfolioSite/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
-<script src="https://pchhina.github.io/portfolioSite/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
-<script src="https://pchhina.github.io/portfolioSite/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+    <script src="../../portfolioSite/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="../../portfolioSite/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="../../portfolioSite/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="../../portfolioSite/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="../../portfolioSite/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<link href="../../portfolioSite/rmarkdown-libs/leaflet-label/leaflet.label.css" rel="stylesheet" />
+<script src="../../portfolioSite/rmarkdown-libs/leaflet-label/leaflet.label.js"></script>
+<script src="../../portfolioSite/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="../../portfolioSite/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<script src="../../portfolioSite/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
 
 
 <p>Last week I learned while listening to NPR that Texas is at the top when it comes to wind power production among all US states. While it is a suprising fact given that Texas is a conservative state and the <a href="http://www.npr.org/2017/03/08/518988840/wind-energy-takes-flight-in-the-heart-of-texas-oil-country">article</a> is an interesting read in itself, this led me to pull some <a href="http://widgets.nrel.gov/mea/wind-exchange/data/installed_wind_capacity_by_state.xls">data</a> from US Department of Energy and create the map I have presented here.</p>
@@ -109,9 +115,22 @@
 <li>Hovering over the circle will reveal name of state and energy produced in Q4 of 2016 in MW.</li>
 </ul>
 <pre class="r"><code>library(leaflet)
-library(maps)
-library(rvest)</code></pre>
+library(maps)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;maps&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     map</code></pre>
+<pre class="r"><code>library(rvest)</code></pre>
 <pre><code>## Loading required package: xml2</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rvest&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     pluck</code></pre>
+<pre><code>## The following object is masked from &#39;package:readr&#39;:
+## 
+##     guess_encoding</code></pre>
 <pre class="r"><code>library(readxl)
 library(htmltools)
 
