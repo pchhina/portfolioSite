@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technology on Paramjot Singh</title>
-    <link>https://pchhina.github.io/portfolioSite/categories/technology/</link>
+    <link>https://paramjot.io/categories/technology/</link>
     <description>Recent content in Technology on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 Dec 2017 05:04:40 -0600</lastBuildDate>
     
-	<atom:link href="https://pchhina.github.io/portfolioSite/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://paramjot.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Exercise Quality Prediction using Machine Learning</title>
-      <link>https://pchhina.github.io/portfolioSite/post/exercise/</link>
+      <link>https://paramjot.io/post/exercise/</link>
       <pubDate>Sat, 30 Dec 2017 05:04:40 -0600</pubDate>
       
-      <guid>https://pchhina.github.io/portfolioSite/post/exercise/</guid>
+      <guid>https://paramjot.io/post/exercise/</guid>
       <description>Many devices exist today in the market (such as Jawbone Up, Nike FuelBand, and Fitbit) that inexpensively record, track and analyze data on personal physical activity. Although by using these devices, quantiy of the physical activity is often monitored, quality is rarely quantified. In this project, our goal is to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants in an attempt to predict whether the activity is performed correcly or not.</description>
     </item>
     
     <item>
       <title>Economic and Health Impact of Severe Weather Events</title>
-      <link>https://pchhina.github.io/portfolioSite/post/stormdata/</link>
+      <link>https://paramjot.io/post/stormdata/</link>
       <pubDate>Thu, 28 Dec 2017 19:32:52 -0600</pubDate>
       
-      <guid>https://pchhina.github.io/portfolioSite/post/stormdata/</guid>
+      <guid>https://paramjot.io/post/stormdata/</guid>
       <description>This post aims to explore the NOAA Storm Database and answer some basic questions about severe weather events focusing on their economic and health impact. The U.S. National Oceanic and Atmospheric Administration&amp;rsquo;s (NOAA) storm database tracks characteristics of major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage. The events in the database start in the year 1950 and end in November 2011.</description>
     </item>
     

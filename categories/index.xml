@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Paramjot Singh</title>
-    <link>https://pchhina.github.io/portfolioSite/categories/</link>
+    <link>https://paramjot.io/categories/</link>
     <description>Recent content in Categories on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://pchhina.github.io/portfolioSite/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://paramjot.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Technology</title>
-      <link>https://pchhina.github.io/portfolioSite/categories/technology/</link>
+      <link>https://paramjot.io/categories/technology/</link>
       <pubDate>Sat, 30 Dec 2017 05:04:40 -0600</pubDate>
       
-      <guid>https://pchhina.github.io/portfolioSite/categories/technology/</guid>
+      <guid>https://paramjot.io/categories/technology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>https://pchhina.github.io/portfolioSite/categories/tools/</link>
-      <pubDate>Sat, 10 Feb 2018 05:04:40 -0600</pubDate>
+      <link>https://paramjot.io/categories/tools/</link>
+      <pubDate>Fri, 16 Feb 2018 06:29:00 -0600</pubDate>
       
-      <guid>https://pchhina.github.io/portfolioSite/categories/tools/</guid>
+      <guid>https://paramjot.io/categories/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorials</title>
-      <link>https://pchhina.github.io/portfolioSite/categories/tutorials/</link>
+      <link>https://paramjot.io/categories/tutorials/</link>
       <pubDate>Tue, 26 Dec 2017 21:40:42 -0600</pubDate>
       
-      <guid>https://pchhina.github.io/portfolioSite/categories/tutorials/</guid>
+      <guid>https://paramjot.io/categories/tutorials/</guid>
       <description></description>
     </item>
     

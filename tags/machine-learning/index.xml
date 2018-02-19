@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on Paramjot Singh</title>
-    <link>https://pchhina.github.io/portfolioSite/tags/machine-learning/</link>
+    <link>https://paramjot.io/tags/machine-learning/</link>
     <description>Recent content in Machine Learning on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 Dec 2017 05:04:40 -0600</lastBuildDate>
     
-	<atom:link href="https://pchhina.github.io/portfolioSite/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://paramjot.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Exercise Quality Prediction using Machine Learning</title>
-      <link>https://pchhina.github.io/portfolioSite/post/exercise/</link>
+      <link>https://paramjot.io/post/exercise/</link>
       <pubDate>Sat, 30 Dec 2017 05:04:40 -0600</pubDate>
       
-      <guid>https://pchhina.github.io/portfolioSite/post/exercise/</guid>
+      <guid>https://paramjot.io/post/exercise/</guid>
       <description>Many devices exist today in the market (such as Jawbone Up, Nike FuelBand, and Fitbit) that inexpensively record, track and analyze data on personal physical activity. Although by using these devices, quantiy of the physical activity is often monitored, quality is rarely quantified. In this project, our goal is to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants in an attempt to predict whether the activity is performed correcly or not.</description>
     </item>
     

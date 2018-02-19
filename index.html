@@ -9,12 +9,12 @@
 <meta name="generator" content="Hugo 0.31.1" />
 <title>Paramjot Singh</title>
 <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-<link href="https://pchhina.github.io/portfolioSite/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://paramjot.io/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="css/freelancer.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="https://pchhina.github.io/portfolioSite/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://paramjot.io/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -159,15 +159,50 @@
         
 <article id="li-art">
   <header id="bh">
-    <h2><a href="https://pchhina.github.io/portfolioSite/post/persistent_plots/"  class="blog-header"  >Test for Rmd Files</a></h2>
+    <h2><a href="https://paramjot.io/post/working-with-files/"  class="blog-header"  >Working With Files</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
         Posted on
-        <time datetime="2018-02-12T00:00:00Z">
-          Feb 12, 2018
+        <time datetime="2018-02-16T06:29:00-06:00">
+          Feb 16, 2018
         </time>
       </div>
       <div class="pull-right">
+        
+        <span class="post-tag"><a href="https://paramjot.io//tags/r">#R</a></span>
+        
+        
+        <span class="post-tag"><a href="https://paramjot.io//categories/tools">#Tools</a></span>
+        
+      </div>
+    </div>
+  </header>
+  <div class = "blog-summary">
+    Alright, let’s get going on this.
+library(ggplot2) ggplot(mpg, aes(hwy, displ)) + scatter_fit() + nonlinear() #&gt; `geom_smooth()` using method = &#39;loess&#39; 
+  </div>
+  
+</article>
+
+        
+        
+       
+        
+
+        
+<article id="li-art">
+  <header id="bh">
+    <h2><a href="https://paramjot.io/post/persistent_plots/"  class="blog-header"  >Test for Rmd Files</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2018-02-16T00:00:00Z">
+          Feb 16, 2018
+        </time>
+      </div>
+      <div class="pull-right">
+        
+        <span class="post-tag"><a href="https://paramjot.io//tags/r">#R</a></span>
         
         
       </div>
@@ -180,7 +215,7 @@ With the amount of available options in R today to create plots, it is easy to g
   
   <footer>
     <ul class="pager">
-      <li class="next"><a href="https://pchhina.github.io/portfolioSite/post/persistent_plots/">Continue Reading <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="https://paramjot.io/post/persistent_plots/">Continue Reading <span aria-hidden="true">&rarr;</span></a></li>
     </ul>
   </footer>
   
@@ -194,7 +229,7 @@ With the amount of available options in R today to create plots, it is easy to g
         
 <article id="li-art">
   <header id="bh">
-    <h2><a href="https://pchhina.github.io/portfolioSite/post/package_building/"  class="blog-header"  >Building R Package using Command Line</a></h2>
+    <h2><a href="https://paramjot.io/post/package_building/"  class="blog-header"  >Building R Package using Command Line</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
         Posted on
@@ -204,10 +239,10 @@ With the amount of available options in R today to create plots, it is easy to g
       </div>
       <div class="pull-right">
         
-        <span class="post-tag"><a href="https://pchhina.github.io/portfolioSite//tags/r">#R</a></span>
+        <span class="post-tag"><a href="https://paramjot.io//tags/r">#R</a></span>
         
         
-        <span class="post-tag"><a href="https://pchhina.github.io/portfolioSite//categories/tools">#Tools</a></span>
+        <span class="post-tag"><a href="https://paramjot.io//categories/tools">#Tools</a></span>
         
       </div>
     </div>
@@ -219,45 +254,7 @@ Step 0: Install the required packages install.packages(c(&quot;devtools&quot;, &
   
   <footer>
     <ul class="pager">
-      <li class="next"><a href="https://pchhina.github.io/portfolioSite/post/package_building/">Continue Reading <span aria-hidden="true">&rarr;</span></a></li>
-    </ul>
-  </footer>
-  
-</article>
-
-        
-        
-       
-        
-
-        
-<article id="li-art">
-  <header id="bh">
-    <h2><a href="https://pchhina.github.io/portfolioSite/post/creating_theme/"  class="blog-header"  >Creating a New ggplot2 Theme</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2018-02-08T19:32:52-06:00">
-          Feb 8, 2018
-        </time>
-      </div>
-      <div class="pull-right">
-        
-        <span class="post-tag"><a href="https://pchhina.github.io/portfolioSite//tags/r">#R</a></span>
-        
-        
-      </div>
-    </div>
-  </header>
-  <div class = "blog-summary">
-    This post introduces simple steps on how to create your own ggplot2 theme. Of course, it will not go into details of changing all the aspects. Instead, it will highlight the process using few useful elements.
-Theme is basically a set of pre-defined(default) values for elements that make up a plot in ggplot2 library. Major elements are:
- Plot, the outermost area used by a plot. Think of this as let&rsquo;s say your A4 sheet on which you want to draw a plot.
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="https://pchhina.github.io/portfolioSite/post/creating_theme/">Continue Reading <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="https://paramjot.io/post/package_building/">Continue Reading <span aria-hidden="true">&rarr;</span></a></li>
     </ul>
   </footer>
   
@@ -470,18 +467,18 @@ Theme is basically a set of pre-defined(default) values for elements that make u
 
 
         <!-- jQuery -->
-<script src="https://pchhina.github.io/portfolioSite/js/jquery-1.11.js"></script>
+<script src="https://paramjot.io/js/jquery-1.11.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="https://pchhina.github.io/portfolioSite/js/bootstrap.js"></script>
+<script src="https://paramjot.io/js/bootstrap.js"></script>
 <!-- Plugin JavaScript -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="https://pchhina.github.io/portfolioSite/js/classie.js"></script>
-<script src="https://pchhina.github.io/portfolioSite/js/cbpAnimatedHeader.js"></script>
+<script src="https://paramjot.io/js/classie.js"></script>
+<script src="https://paramjot.io/js/cbpAnimatedHeader.js"></script>
 <!-- Contact Form JavaScript -->
-<script src="https://pchhina.github.io/portfolioSite/js/jqBootstrapValidation.js"></script>
-<script src="https://pchhina.github.io/portfolioSite/js/contact_me.js"></script>
+<script src="https://paramjot.io/js/jqBootstrapValidation.js"></script>
+<script src="https://paramjot.io/js/contact_me.js"></script>
 <!-- Custom Theme JavaScript -->
-<script src="https://pchhina.github.io/portfolioSite/js/freelancer.js"></script>
+<script src="https://paramjot.io/js/freelancer.js"></script>
 <!-- Custom JavaScript files -->
 
 
