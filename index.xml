@@ -6,10 +6,20 @@
     <description>Recent content on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Feb 2018 06:29:00 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test for Rmd Files</title>
+      <link>https://paramjot.io/post/persistent_plots/</link>
+      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://paramjot.io/post/persistent_plots/</guid>
+      <description>In this post, I describe the importance of persistent plots while carrying out a analysis. A case is made for simpler and persistent plots and the process to create the plots is demonstrated with an example. Finally, a package is created to stitch things together in a coherent fashion.
+With the amount of available options in R today to create plots, it is easy to get distracted and miss the point of using plots in first place - to bring to attention something unique about the data which otherwise could be difficult, if not impossible, just looking at the raw numbers.</description>
+    </item>
     
     <item>
       <title>Working With Files</title>
@@ -19,16 +29,6 @@
       <guid>https://paramjot.io/post/working-with-files/</guid>
       <description>Alright, let’s get going on this.
 library(ggplot2) ggplot(mpg, aes(hwy, displ)) + scatter_fit() + nonlinear() #&amp;gt; `geom_smooth()` using method = &amp;#39;loess&amp;#39; </description>
-    </item>
-    
-    <item>
-      <title>Test for Rmd Files</title>
-      <link>https://paramjot.io/post/persistent_plots/</link>
-      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://paramjot.io/post/persistent_plots/</guid>
-      <description>In this post, I describe the importance of persistent plots while carrying out a analysis. A case is made for simpler and persistent plots and the process to create the plots is demonstrated with an example. Finally, a package is created to stitch things together in a coherent fashion.
-With the amount of available options in R today to create plots, it is easy to get distracted and miss the point of using plots in first place - to bring to attention something unique about the data which otherwise could be difficult, if not impossible, just looking at the raw numbers.</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@ git init  Cloning an existing project from github</description>
       <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://paramjot.io/post/wind/</guid>
-      <description>Last week I learned while listening to NPR that Texas is at the top when it comes to wind power production among all US states. While it is a suprising fact given that Texas is a conservative state and the article is an interesting read in itself, this led me to pull some data from US Department of Energy and create the map I have presented here.</description>
+      <description>knitr::opts_chunk$set( collapse = TRUE, warning = FALSE, message = FALSE, comment = &amp;quot;#&amp;gt;&amp;quot;, class.source = &amp;#39;white&amp;#39; ) Last week I learned while listening to NPR that Texas is at the top when it comes to wind power production among all US states. While it is a suprising fact given that Texas is a conservative state and the article is an interesting read in itself, this led me to pull some data from US Department of Energy and create the map I have presented here.</description>
     </item>
     
     <item>
