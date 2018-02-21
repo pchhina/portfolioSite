@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analysis on Paramjot Singh</title>
+    <link>https://paramjot.io/categories/analysis/</link>
+    <description>Recent content in Analysis on Paramjot Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://paramjot.io/categories/analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>US Wind Energy Production (2016)</title>
+      <link>https://paramjot.io/post/wind/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://paramjot.io/post/wind/</guid>
+      <description>Last week I learned while listening to NPR that Texas is at the top when it comes to wind power production among all US states. While it is a suprising fact given that Texas is a conservative state and the article is an interesting read in itself, this led me to pull some data from US Department of Energy and create the map I have presented here.</description>
+    </item>
+    
+  </channel>
+</rss>

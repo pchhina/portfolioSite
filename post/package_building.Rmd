@@ -1,0 +1,135 @@
+---
+title: "Building R Package using Command Line"
+date: 2018-02-10T05:04:40-06:00
+draft: false
+output: html_document
+tags: ["R"]
+categories: ["Tools"]
+---
+```{r setup, include = FALSE, eval = TRUE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  eval = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  comment = "#>",
+  class.source = 'white'
+)
+```
+
+This post describes the process of building an R package without using RStudio. This can come in handy for anyone who is using vim (and of course Nvim-R!) as a code editor for their development work. Alright, let's get moving. We are going to create a small package offering a new ggplot theme to demonstrate the process.
+
+### Step 0: Install the required packages
+
+```{r}
+install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
+library(devtools)
+has_devel()
+```
+The command `has_devel()` basically checks that everything is installed as expected. At the end of its output, you should see `TRUE` if everything goes alright.
+
+### Step 1: Create a package directory
+First, we are going to create the package directory where everything is going to reside related to this package. This will also generate some boilerplate files inside the package directory that we will edit soon. We will use the following command:
+
+
+```{r}
+create("~/projects/themeSimple")
+```
+
+In this case, I have created a directory called 'themeSimple' inside 'projects' directory. `themeSimple` will also be the name of our package. It is generally not recommended to use both cases for the package name since it becomes difficult for folks to remember or type correctly when installing. 
+
+### Step 2: Edit the DESCRIPTION file
+[Here](https://github.com/pchhina/themeSimple/blob/master/DESCRIPTION) is how my file looks like after editing.
+
+### Step 3: git it out!
+
+```{r}
+$git init
+$git add .
+$git commit 
+```
+
+### Step 4: Add any raw data if needed
+In our case we do not need any data. In case you do, add any raw data in `inst/extdata` directory. Add any processed data (.RData or .rda) in `/data` directory.
+
+### Step 5: Create .Rmd for analysis
+It is good idea to keep notes in .Rmd file so it can be converted into vignette later if needed. In that case, save the file in `/vignettes` directory. To have `devtools` automatically create this for you and populate it with boilerplate content, use:
+
+```{r}
+use_vignette("analysis")
+```
+
+In the above example, it will create 'analysis.Rmd' in `/vignettes` directory.
+
+### Step 6: Carry out the work
+Carry out the analysis, write cool functions. Add all functions in /R directory. I am using a function created in [this]({{< ref "creating_theme.md" >}}) blog post.
+
+### Step 7: Update documentation
+```{r}
+document()
+```
+
+This uses Roxygen2 to create/update NAMESPACE file and .Rd files in `/man` directory for each function.
+
+### Step 8: Build package
+```{r}
+build("themeSimple")
+```
+
+This creates a \*.tar.gz file that can be installed on any platform.
+
+### Step 9: git it!
+```{r}
+$git add <files>
+$git commit
+```
+
+### Step 10: Check it
+```{r}
+check()
+```
+This runs all sorts of checks on the contents (including examples) of the package, and gives warnings/errors when it finds that things aren't right.    
+
+### Step 11: Install locally to test
+
+```{r}
+install(build_vignettes = TRUE)
+```
+
+### Step 12: Upload on Github
+First, create a new repo on Github. Follow instructions in [this]({{< ref "git-commands.md" >}}) blog if needed.
+
+Connect local repo to Github repo:
+
+```{r}
+$git remote add origin <github repo name>
+```
+
+Push everything on Github:
+
+```{r}
+$git push -u origin master
+```
+
+### Step 13: Test Github package
+
+Remove package from your installation:
+
+```{r}
+remove.packages("themeSimple")
+```
+
+Install package from Github:
+
+```{r}
+install_github("pchhina/themeSimple")
+```
+
+### Step 14: Test
+
+Test your new package and you are done!!
+
+### Care to learn more?
+- This [book](http://r-pkgs.had.co.nz/) on R packages by Hadley Wickham is a great resource.
+- This [post](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) by Hillary Parker is a good resource for those in a hurry.
+- Karl Broman has put together a more comprehensive [tutorial](http://kbroman.org/pkg_primer/).
