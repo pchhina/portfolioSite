@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Mar 2018 05:39:51 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 06 Mar 2018 05:05:20 -0600</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Just Enough Vim</title>
+      <link>https://paramjot.io/post/just-enough-vim/</link>
+      <pubDate>Tue, 06 Mar 2018 05:05:20 -0600</pubDate>
+      
+      <guid>https://paramjot.io/post/just-enough-vim/</guid>
+      <description>Vim is an extremely powerful editor. It is a bit scary in the beginning but once you spend a little bit time playing with it, you would start to realize its power. One of the great advantages I feel about learning Vim(when compared to a dedicated IDE) is that it is language neutral. So if you switch to learning a new language in the future, you do not have to learn the ins and outs of a new IDE, Vim will be there for you.</description>
+    </item>
     
     <item>
       <title>Atreus Building Experience</title>
