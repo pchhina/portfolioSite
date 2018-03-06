@@ -6,10 +6,19 @@
     <description>Recent content in Tools on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Feb 2018 05:04:40 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 05 Mar 2018 05:39:51 -0600</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Atreus Building Experience</title>
+      <link>https://paramjot.io/post/atreus/</link>
+      <pubDate>Mon, 05 Mar 2018 05:39:51 -0600</pubDate>
+      
+      <guid>https://paramjot.io/post/atreus/</guid>
+      <description>Here I write about my atreus keyboard builing experience. Atreus is a keyboard with very unique features like small form factor, freedom to program any key the way you want, ability to work with any OS without installing any driver and the best of all - the freedom to build it with your own hands the way you like it. So in this regard, it is the experience of personalizing your hardware!</description>
+    </item>
     
     <item>
       <title>Building R Package using Command Line</title>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://paramjot.io/post/atreus/</loc>
+    <lastmod>2018-03-05T05:39:51-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://paramjot.io/post/persistent_plots/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url>
@@ -61,6 +66,12 @@
   </url>
   
   <url>
+    <loc>https://paramjot.io/tags/hardware/</loc>
+    <lastmod>2018-03-05T05:39:51-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://paramjot.io/tags/machine-learning/</loc>
     <lastmod>2017-12-30T05:04:40-06:00</lastmod>
     <priority>0</priority>
@@ -68,13 +79,13 @@
   
   <url>
     <loc>https://paramjot.io/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-05T05:39:51-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://paramjot.io/post/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-05T05:39:51-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -98,7 +109,7 @@
   
   <url>
     <loc>https://paramjot.io/categories/tools/</loc>
-    <lastmod>2018-02-10T05:04:40-06:00</lastmod>
+    <lastmod>2018-03-05T05:39:51-06:00</lastmod>
     <priority>0</priority>
   </url>
   
