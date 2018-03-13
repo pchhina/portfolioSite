@@ -6,10 +6,19 @@
     <description>Recent content on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Mar 2018 05:05:20 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 11 Mar 2018 19:14:27 -0500</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mastering Atomic Vectors in R</title>
+      <link>https://paramjot.io/post/mastering-atomic-vectors-in-r/</link>
+      <pubDate>Sun, 11 Mar 2018 19:14:27 -0500</pubDate>
+      
+      <guid>https://paramjot.io/post/mastering-atomic-vectors-in-r/</guid>
+      <description>Creating Our First Atomic Vector Peeking into our Vector Objects as Arguments to Functions Other Ways of Creating a Vector Vector Operations Chaining of Functions Selecting Few Elements of a Vector (Subsetting) More Uses of Logical Subsetting Two Types of Vectors Pick Elements Randomly Some Special Values   Atomic vectors in R are the fundamental data structures on which other more complex data structures are built. When we are comfortable manipulating atomic vectors, it is easier and more natural to work with higher level structures like lists, data frames and tibbles.</description>
+    </item>
     
     <item>
       <title>Just Enough... Vim</title>
