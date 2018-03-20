@@ -6,10 +6,19 @@
     <description>Recent content on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Mar 2018 19:14:27 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 17 Mar 2018 07:13:42 -0500</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mastering R Programming</title>
+      <link>https://paramjot.io/post/mastering-r-programming/</link>
+      <pubDate>Sat, 17 Mar 2018 07:13:42 -0500</pubDate>
+      
+      <guid>https://paramjot.io/post/mastering-r-programming/</guid>
+      <description>Functions In-built Functions User-Defined Functions Validating Function Inputs using Conditionals Repeating a Calculation Many Times Passing Arguments to a Function used inside User-Defined Function Peeking into a Function Where do these Functions and Objects live? How Fast (or Slow) my Code Runs?   In an earlier post we learned a key ingredient needed for creating any data product - atomic vectors. If you were a chef, atomic vectors will be your main ingredient for creating the dish - rice, chicken, potatoes, eggs etc.</description>
+    </item>
     
     <item>
       <title>Mastering Atomic Vectors in R</title>
