@@ -17,7 +17,7 @@
       <pubDate>Sat, 17 Mar 2018 07:13:42 -0500</pubDate>
       
       <guid>https://paramjot.io/post/mastering-r-programming/</guid>
-      <description>Functions Validating Function Inputs using Conditionals Repeating a Calculation Many Times Passing Arguments to a Function used inside User-Defined Function Peeking into a Function Where do these Functions and Objects live? Loading Objects in R Environment from R Scripts How Fast (or Slow) my Code Runs? Quick Introduction to Tibbles (and Dataframes) Exploring Built-In Datasets   In an earlier post we learned a key ingredient needed for creating any data product - atomic vectors.</description>
+      <description>Functions Validating Function Inputs using Conditionals Repeating a Calculation Many Times Passing Arguments to a Function used inside User-Defined Function Peeking into a Function Where do these Functions and Objects live? Loading Objects in R Environment from R Scripts How Fast (or Slow) my Code Runs? Quick Introduction to Tibbles (and Dataframes) Exploring Built-In Datasets Extracting Atomic Vectors from a Tibble Where am I? Summary   In an earlier post we learned a key ingredient needed for creating any data product - atomic vectors.</description>
     </item>
     
     <item>
