@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Mar 2018 03:40:34 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 29 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Persistent Plotting in R</title>
+      <link>https://paramjot.io/post/persistent_plots/</link>
+      <pubDate>Thu, 29 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://paramjot.io/post/persistent_plots/</guid>
+      <description>In this post, I describe the importance of persistent plots while carrying out a analysis. A case is made for simpler and persistent plots and the process to create the plots is demonstrated with an example. Finally, a package is created to stitch things together in a coherent fashion.
+With the amount of available options in R today to create plots, it is easy to get distracted and miss the point of using plots in first place - to bring to attention something unique about the data which otherwise could be difficult, if not impossible, just looking at the raw numbers.</description>
+    </item>
     
     <item>
       <title>Statistical Inference Using R</title>
@@ -54,16 +64,6 @@
       
       <guid>https://paramjot.io/post/atreus/</guid>
       <description>Here I write about my atreus keyboard builing experience. Atreus is a keyboard with very unique features like small form factor, freedom to program any key the way you want, ability to work with any OS without installing any driver and the best of all - the freedom to build it with your own hands the way you like it. So in this regard, it is the experience of personalizing your hardware!</description>
-    </item>
-    
-    <item>
-      <title>Persistent Plotting in R</title>
-      <link>https://paramjot.io/post/persistent_plots/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://paramjot.io/post/persistent_plots/</guid>
-      <description>In this post, I describe the importance of persistent plots while carrying out a analysis. A case is made for simpler and persistent plots and the process to create the plots is demonstrated with an example. Finally, a package is created to stitch things together in a coherent fashion.
-With the amount of available options in R today to create plots, it is easy to get distracted and miss the point of using plots in first place - to bring to attention something unique about the data which otherwise could be difficult, if not impossible, just looking at the raw numbers.</description>
     </item>
     
     <item>
