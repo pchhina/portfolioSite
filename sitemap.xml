@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://paramjot.io/post/quizme-intro/</loc>
+    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://paramjot.io/post/predicting-a-numerical-outcome-with-linear-models/</loc>
     <lastmod>2018-03-30T20:53:08-05:00</lastmod>
   </url>
@@ -103,32 +108,38 @@
   </url>
   
   <url>
-    <loc>https://paramjot.io/categories/machine-learning/</loc>
-    <lastmod>2018-03-30T20:53:08-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://paramjot.io/tags/machine-learning/</loc>
     <lastmod>2017-12-30T05:04:40-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://paramjot.io/</loc>
+    <loc>https://paramjot.io/categories/machine-learning/</loc>
     <lastmod>2018-03-30T20:53:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://paramjot.io/categories/package/</loc>
+    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://paramjot.io/</loc>
+    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://paramjot.io/post/</loc>
-    <lastmod>2018-03-30T20:53:08-05:00</lastmod>
+    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://paramjot.io/tags/r/</loc>
-    <lastmod>2018-03-30T20:53:08-05:00</lastmod>
+    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,7 +157,7 @@
   
   <url>
     <loc>https://paramjot.io/categories/tools/</loc>
-    <lastmod>2018-03-06T05:05:20-06:00</lastmod>
+    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
     <priority>0</priority>
   </url>
   
