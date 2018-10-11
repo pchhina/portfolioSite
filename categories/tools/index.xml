@@ -6,10 +6,20 @@
     <description>Recent content in Tools on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Mar 2018 05:05:20 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 10 Oct 2018 05:27:31 -0500</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Testing and Continuous Integration in R</title>
+      <link>https://paramjot.io/post/unit-testing-r-with-testthat/</link>
+      <pubDate>Wed, 10 Oct 2018 05:27:31 -0500</pubDate>
+      
+      <guid>https://paramjot.io/post/unit-testing-r-with-testthat/</guid>
+      <description>Often a useful function will do what we expected it to do. But sometimes it will do the unexpected. It is easy to find and address this unexpected behavior at the time of writing the function but becomes increasingly hard as the time goes by, codebase expands and dependencies become complex.
+To decrease the frustration when unexpected behavior occurs, it is desirable to automate the testing process. This can be accomplished by adding the following steps in your package development workflow:</description>
+    </item>
     
     <item>
       <title>Just Enough... Vim</title>

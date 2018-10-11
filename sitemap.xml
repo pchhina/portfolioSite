@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://paramjot.io/post/unit-testing-r-with-testthat/</loc>
+    <lastmod>2018-10-10T05:27:31-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://paramjot.io/post/quizme-intro/</loc>
     <lastmod>2018-10-08T19:04:48-05:00</lastmod>
   </url>
@@ -127,19 +132,19 @@
   
   <url>
     <loc>https://paramjot.io/</loc>
-    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
+    <lastmod>2018-10-10T05:27:31-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://paramjot.io/post/</loc>
-    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
+    <lastmod>2018-10-10T05:27:31-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://paramjot.io/tags/r/</loc>
-    <lastmod>2018-10-08T19:04:48-05:00</lastmod>
+    <lastmod>2018-10-10T05:27:31-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -157,7 +162,7 @@
   
   <url>
     <loc>https://paramjot.io/categories/tools/</loc>
-    <lastmod>2018-03-06T05:05:20-06:00</lastmod>
+    <lastmod>2018-10-10T05:27:31-05:00</lastmod>
     <priority>0</priority>
   </url>
   
