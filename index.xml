@@ -6,10 +6,19 @@
     <description>Recent content on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Oct 2018 05:27:31 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 15:53:00 -0600</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quizme Design</title>
+      <link>https://paramjot.io/post/quizme-design/</link>
+      <pubDate>Sun, 23 Dec 2018 15:53:00 -0600</pubDate>
+      
+      <guid>https://paramjot.io/post/quizme-design/</guid>
+      <description>Introduction The idea of quizme started with a need to learn R more effectively as I could not spend more than few hours a day outside of my regular life. My first approach to the problem, while I thought was neat, needed a lot of manual intervention. In this design, I had two text files - one containing questions and another containing questions and answers. A simple function would randomly select 10 questions.</description>
+    </item>
     
     <item>
       <title>Testing and Continuous Integration in R</title>
@@ -22,7 +31,7 @@ To decrease the frustration when unexpected behavior occurs, it is desirable to 
     </item>
     
     <item>
-      <title>quizme: An R Package to Create and Practice Any Learning Material</title>
+      <title>Quizme Introduction and Usage</title>
       <link>https://paramjot.io/post/quizme-intro/</link>
       <pubDate>Mon, 08 Oct 2018 19:04:48 -0500</pubDate>
       
