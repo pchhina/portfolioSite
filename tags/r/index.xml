@@ -6,10 +6,20 @@
     <description>Recent content in R on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Dec 2018 18:34:58 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 28 Dec 2018 06:09:53 -0600</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Autoquiz: A Wrapper to Run Quizme from Terminal</title>
+      <link>https://paramjot.io/post/autoquiz/</link>
+      <pubDate>Fri, 28 Dec 2018 06:09:53 -0600</pubDate>
+      
+      <guid>https://paramjot.io/post/autoquiz/</guid>
+      <description>Quizme is an R package that allows you to create a personalized quiz repository and enables you to learn any material efficiently. Autoquiz is a simple wrapper script that allows you to run quizme directly from the terminal window. Here I discuss the advantages of running the tool from terminal as well as describe the implementation.
+Benefits of Running Quizme from Command Line While quizme is quite powerful, integrating it to your daily workflow can be a bit of a challenge.</description>
+    </item>
     
     <item>
       <title>Quizme Development</title>
