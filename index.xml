@@ -6,10 +6,20 @@
     <description>Recent content on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Dec 2018 15:53:00 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 25 Dec 2018 18:34:58 -0600</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quizme Development</title>
+      <link>https://paramjot.io/post/quizme-development/</link>
+      <pubDate>Tue, 25 Dec 2018 18:34:58 -0600</pubDate>
+      
+      <guid>https://paramjot.io/post/quizme-development/</guid>
+      <description>Quizme is an R package that allows you to create a personalized quiz repository and enables you to learn any material efficiently. Here I describe the functional logic underlying this package. I will discuss the layout of data structures employed and briefly describe the role of almost all of the user and backend functions.
+Overall Structure At the beginning following data structures are created (or read if these exist from an earlier session):</description>
+    </item>
     
     <item>
       <title>Quizme Design</title>
