@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Paramjot Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Dec 2018 13:27:08 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 29 Dec 2018 10:06:58 -0600</lastBuildDate>
     
 	<atom:link href="https://paramjot.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>data.table: Swiss Army Knife for Data Wrangling</title>
+      <link>https://paramjot.io/post/datatable/</link>
+      <pubDate>Sat, 29 Dec 2018 10:06:58 -0600</pubDate>
+      
+      <guid>https://paramjot.io/post/datatable/</guid>
+      <description>Row Selection Column (variable) Selection Computing on J More Expressions in J Update by Reference Remove Columns   While data.table is mostly praised for its speed (which is undeniable), I was impressed with its versatility as well. The ability to manipulate the data in variety of ways using an extremely compact syntax is second to none. Sure it needs a bit of getting used to but the payoffs are phenomenal.</description>
+    </item>
     
     <item>
       <title>Quizme Workflow With Autoquiz</title>
